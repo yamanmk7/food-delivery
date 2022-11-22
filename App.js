@@ -1,9 +1,10 @@
 import React from "react";
-import { View,Text } from "react-native";
+import { View,Text, I18nManager } from "react-native";
 import Home from "./src/component/Home";
 
 
 const App = () => {
+  I18nManager.allowRTL(false)
   return(
     
       <Home/>

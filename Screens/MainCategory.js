@@ -19,6 +19,12 @@ export default function MainCategories() {
     
 
       const renderItem = ({item}) => {
+        /**
+         * TODO: 
+         * 1- creat mainCAtegory component 
+         * 2- nooo inLine style 
+         * 3- move strings to strings file 
+         */
         return (
             <TouchableOpacity
                 style={{
@@ -53,23 +59,33 @@ export default function MainCategories() {
                     />
                 </View>
 
-                <Text style={{ marginTop: SIZES.padding, color: (selectedCategory?.id == item.id) ? COLORS.white : COLORS.black, fontSize: SIZES.h4 }}>{item.name}</Text>
+                <Text style={{ marginTop: SIZES.padding,
+                     color: (selectedCategory?.id == item.id) ? COLORS.white :
+                      COLORS.black, fontSize: SIZES.h4 }}
+                     >{item.name}</Text>
             </TouchableOpacity>
         )
       }
 
     /////////////////////////////
+
+    const params = {
+        list :{
+            data :categories , 
+            horizontal:true , 
+            showsHorizontalScrollIndicator: false , 
+            keyExtractor: item => `${item.id}` , 
+            renderItem, 
+            contentContainerStyle:{paddingVertical:SIZES.padding*2}, 
+        }
+    }
+
     return (
       <View style={{padding:SIZES.padding*2}} >
         <Text style={styles.text}>Main </Text>
         <Text style={styles.text}>Categories</Text>
 
-        <FlatList data={categories}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        keyExtractor={item => `${item.id}`}
-        renderItem={renderItem}
-        contentContainerStyle={{paddingVertical:SIZES.padding*2}} />
+        <FlatList {...params.list}/> 
       </View>
     )
   }
@@ -79,5 +95,6 @@ export default function MainCategories() {
             fontSize: 30,
             fontWeight: 'bold',
             color: COLORS.black,
+            
         },
     })
