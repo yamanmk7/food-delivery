@@ -11,7 +11,7 @@ const restaurantData = [
         name: " Burger",
         rating: 4.8,
         categories: [5, 7],
-        priceRating: affordable,
+        price: "$39",
         photo: images.burgerRestaurant,
         duration: "30 - 45 min",
         location: {
@@ -54,7 +54,7 @@ const restaurantData = [
         name: " Pizza",
         rating: 4.8,
         categories: [2, 4, 6],
-        priceRating: expensive,
+        price: "$39",
         photo: images.pizzaRestaurant,
         duration: "15 - 20 min",
         location: {
@@ -105,8 +105,8 @@ const restaurantData = [
         name: " Hotdogs",
         rating: 4.8,
         categories: [3],
-        priceRating: expensive,
-        photo: images.hot_dog_restaurant,
+        price: "$39",
+        photo: images.hotDog,
         duration: "20 - 25 min",
         location: {
             latitude: 1.5238753474714375,
@@ -120,7 +120,7 @@ const restaurantData = [
             {
                 menuId: 8,
                 name: "Chicago Style Hot Dog",
-                photo: images.chicagoHotDog,
+                photo: images.hotDogRestaurant,
                 description: "Fresh tomatoes, all beef hot dogs",
                 calories: 100,
                 price: 20
@@ -132,8 +132,8 @@ const restaurantData = [
         name: " Sushi",
         rating: 4.8,
         categories: [8],
-        priceRating: expensive,
-        photo: images.japanese_restaurant,
+        price: "$39",
+        photo: images.sushi,
         duration: "10 - 15 min",
         location: {
             latitude: 1.5578068150528928,
@@ -159,7 +159,7 @@ const restaurantData = [
         name: " Cuisine",
         rating: 4.8,
         categories: [1, 2],
-        priceRating: affordable,
+        price: "$39",
         photo: images.noodleShop,
         duration: "15 - 20 min",
         location: {
@@ -212,7 +212,7 @@ const restaurantData = [
         name: " Dessets",
         rating: 4.9,
         categories: [9, 10],
-        priceRating: affordable,
+        price: "$39",
         photo: images.kekLapis,
         duration: "35 - 40 min",
         location: {

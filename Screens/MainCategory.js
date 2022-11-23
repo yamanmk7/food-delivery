@@ -82,7 +82,7 @@ export default function MainCategories() {
 
     return (
       <View style={{padding:SIZES.padding*2}} >
-        <Text style={styles.text}>Main </Text>
+        
         <Text style={styles.text}>Categories</Text>
 
         <FlatList {...params.list}/> 

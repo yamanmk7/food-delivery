@@ -12,7 +12,7 @@ const images = {
     friesRestaurant: require('../assets/images/fries-restaurant.jpg'),
     hawaiianPizza: require('../assets/images/hawaiian-pizza.jpg'),
     honeyMustardChickenBurger: require('../assets/images/honey-mustard-chicken-burger.jpg'),
-    hotDogRestaurant: require('../assets/images/hot-dog-restaurant.jpg'),
+    hotDog: require('../assets/images/hot-dog-restaurant.jpg'),
     iceKacang: require('../assets/images/ice-kacang.jpg'),
     kekLapisShop: require('../assets/images/kek-lapis-shop.jpg'),
     kekLapis: require('../assets/images/kek-lapis.jpg'),
