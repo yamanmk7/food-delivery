@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import {NavigationContainer} from '@react-navigation/native'; 
 import Tabs from "./Screens/tabs";
+import OrderScreen from "./src/component/OrderScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,14 +18,15 @@ const App = () => {
   I18nManager.allowRTL(false)
   return(
     
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Tabs} options={{headerShown:false}}/>
-        <Stack.Screen name="Details" component={Details} options={{headerShown:false}}/>
-        <Stack.Screen name="OrderDelivery" component={OrderDelivery} options={{headerShown:false}}/>
+    // <NavigationContainer>
+    //   <Stack.Navigator>
+    //     <Stack.Screen name="Home" component={Tabs} options={{headerShown:false}}/>
+    //     <Stack.Screen name="Details" component={Details} options={{headerShown:false}}/>
+    //     <Stack.Screen name="OrderDelivery" component={OrderDelivery} options={{headerShown:false}}/>
         
-      </Stack.Navigator>
-    </NavigationContainer>
+    //   </Stack.Navigator>
+    // </NavigationContainer>
+    <OrderScreen/>
    
   )
 };

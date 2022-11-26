@@ -7,9 +7,10 @@ import COLORS from '../assets/Colors'
 import icons from '../constans/icons'
 import restaurantData from '../Screens/RestaurantData'
 import FoodMenu from './FoodMenu'
+import OrderDelivery from '../src/component/OrderDelivery'
 
 
-function RestaurantList  ()  {
+function RestaurantList  ({navigation})  {
     const [restaurants, setRestaurants] = useState(restaurantData)
   return (
     
@@ -17,7 +18,7 @@ function RestaurantList  ()  {
           <View>
         <View>
               <TouchableOpacity>
-            <Image style={styles.foodImg} source={FoodMenu[0].photo} />
+            <Image style={styles.foodImg} source={FoodMenu[0].photo}  onProgress={()=> navigation.navigate("OrderScreen")} />
             </TouchableOpacity>
             <View style={styles.time} >
             <Text  style={styles.duration} >{FoodMenu[0].duration}</Text>
@@ -37,8 +38,8 @@ function RestaurantList  ()  {
 
         <View style={styles.Container} >
         <View>
-              <TouchableOpacity>
-            <Image style={styles.foodImg} source={FoodMenu[1].photo} />
+              <TouchableOpacity  >
+            <Image  style={styles.foodImg} source={FoodMenu[1].photo} />
             </TouchableOpacity>
             <View style={styles.time} >
             <Text  style={styles.duration} >{FoodMenu[1].duration}</Text>

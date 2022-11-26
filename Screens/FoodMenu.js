@@ -9,6 +9,7 @@ import icons from "../constans/icons";
     rating: restaurantData[0].rating,
     star: icons.star,
     price: restaurantData[0].price,
+    menu : restaurantData[0].menu,
     },
     {
       photo: restaurantData[1].photo,
