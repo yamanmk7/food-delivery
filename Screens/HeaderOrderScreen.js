@@ -2,14 +2,17 @@ import { View, Text,SafeAreaView,StyleSheet,TouchableOpacity,Image,Animated } fr
 import React from 'react'
 
 import icons from '../constans/icons'
+import { useNavigation } from '@react-navigation/native'
 
 
 
 const HeaderOrderScreen = () => {
+    const navigation = useNavigation()
+
   return (
     <View>
        <View style={styles.Container}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=> navigation.goBack()}>
             <Image style={styles.goBack} source={icons.back} />
         </TouchableOpacity>
         
@@ -28,6 +31,7 @@ const HeaderOrderScreen = () => {
 const styles = StyleSheet.create({
     Container:{
         flexDirection:"row",
+        marginTop:30,
     } ,
     goBack:{
         width:30,

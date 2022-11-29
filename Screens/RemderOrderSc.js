@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
         backgroundColor:COLORS.white,
         borderTopLeftRadius:40,
         borderTopRightRadius:40,
-        marginTop:20,
+        marginTop:220,
 
     },
     orderContainer:{

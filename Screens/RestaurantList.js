@@ -8,17 +8,19 @@ import icons from '../constans/icons'
 import restaurantData from '../Screens/RestaurantData'
 import FoodMenu from './FoodMenu'
 import OrderDelivery from '../src/component/OrderDelivery'
+import {useNavigation} from '@react-navigation/native'
 
 
-function RestaurantList  ({navigation})  {
-    const [restaurants, setRestaurants] = useState(restaurantData)
+const RestaurantList   = ({props}) => {
+  const navigation = useNavigation()
+    const [restaurants, setRestaurants] = useState(restaurantData);
   return (
     
         <ScrollView>
           <View>
         <View>
-              <TouchableOpacity>
-            <Image style={styles.foodImg} source={FoodMenu[0].photo}  onProgress={()=> navigation.navigate("OrderScreen")} />
+              <TouchableOpacity onPress={()=> navigation.navigate("OrderScreen")}>
+            <Image style={styles.foodImg} source={FoodMenu[0].photo}   />
             </TouchableOpacity>
             <View style={styles.time} >
             <Text  style={styles.duration} >{FoodMenu[0].duration}</Text>

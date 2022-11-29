@@ -18,15 +18,15 @@ const App = () => {
   I18nManager.allowRTL(false)
   return(
     
-    // <NavigationContainer>
-    //   <Stack.Navigator>
-    //     <Stack.Screen name="Home" component={Tabs} options={{headerShown:false}}/>
-    //     <Stack.Screen name="Details" component={Details} options={{headerShown:false}}/>
-    //     <Stack.Screen name="OrderDelivery" component={OrderDelivery} options={{headerShown:false}}/>
-        
-    //   </Stack.Navigator>
-    // </NavigationContainer>
-    <OrderScreen/>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Tabs} options={{headerShown:false}}/>
+        <Stack.Screen name="Details" component={Details} options={{headerShown:false}}/>
+        <Stack.Screen name="OrderDelivery" component={OrderDelivery} options={{headerShown:false}}/>
+        <Stack.Screen name="OrderScreen" component={OrderScreen} options={{headerShown:false}}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+    
    
   )
 };

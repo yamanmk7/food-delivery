@@ -7,7 +7,7 @@ function Details() {
    <Text>
     dddddd
    </Text>
-   </View>
+   </View> 
   )
 }
 
