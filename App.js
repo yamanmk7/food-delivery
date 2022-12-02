@@ -8,6 +8,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {NavigationContainer} from '@react-navigation/native'; 
 import Tabs from "./Screens/tabs";
 import OrderScreen from "./src/component/OrderScreen";
+import UserScreen from "./src/component/UserScreen";
+import SingIn from "./Screens/Singin/SingIn";
+
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +27,8 @@ const App = () => {
         <Stack.Screen name="Details" component={Details} options={{headerShown:false}}/>
         <Stack.Screen name="OrderDelivery" component={OrderDelivery} options={{headerShown:false}}/>
         <Stack.Screen name="OrderScreen" component={OrderScreen} options={{headerShown:false}}/>
+        <Stack.Screen name="UserScreen" component={UserScreen} options={{headerShown:false}}/>
+        <Stack.Screen name="SingIn" component={SingIn} options={{headerShown:false}}/>
       </Stack.Navigator>
     </NavigationContainer>
     

@@ -4,6 +4,7 @@ import { createBottomTabNavigator, BottomTabBar } from "@react-navigation/bottom
 import Home from "../src/component/Home";
 import COLORS from "../assets/Colors";
 import icons from "../constans/icons";
+import SingUp from "./Singin/SingUp";
 
 
 const Tab = createBottomTabNavigator();
@@ -11,7 +12,7 @@ const Tab = createBottomTabNavigator();
 const Tabs = () => {
     return (
         <Tab.Navigator    >
-            <Tab.Screen  name="Home" component={Home} options={{ 
+            <Tab.Screen  name="Home" component={Home} options={{ headerShown:false,
                 tabBarIcon: ({focused}) => (
                     <Image   source={icons.cutlery} resizeMode='contain' style={{ width:30,
                         height:30, 
@@ -42,7 +43,7 @@ const Tabs = () => {
 
 
 
-            <Tab.Screen  name="User" component={Home} options={{
+            <Tab.Screen  name="User" component={SingUp} options={{ headerShown:false,
                 tabBarIcon: ({focused}) => (
                     <Image   source={icons.user} resizeMode='contain' style={{ width:30,
                         height:30, 
