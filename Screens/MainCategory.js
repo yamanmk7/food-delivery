@@ -8,23 +8,23 @@ import { Colors } from 'react-native/Libraries/NewAppScreen'
 import { useState } from 'react'
 
 import categoryData from '../Screens/categoryData'
+import restaurantData from './RestaurantData'
+import { useNavigation } from '@react-navigation/native'
 
 
 
 
 export default function MainCategories() {
-   
+    const navigation = useNavigation()
     const [categories, setCategories] = useState(categoryData)
     const [selectedCategory, setSelectedCategory] = useState(null)
-    
+    const [restaurants, setRestaurants] = useState(restaurantData);
+
+
+      
 
       const renderItem = ({item}) => {
-        /**
-         * TODO: 
-         * 1- creat mainCAtegory component 
-         * 2- nooo inLine style 
-         * 3- move strings to strings file 
-         */
+     
         return (
             <TouchableOpacity
                 style={{
@@ -52,10 +52,7 @@ export default function MainCategories() {
                     <Image
                         source={item.icon}
                         resizeMode="cover"
-                        style={{
-                            width: 30,
-                            height: 30
-                        }}
+                        style={styles.icons}
                     />
                 </View>
 
@@ -81,13 +78,21 @@ export default function MainCategories() {
     }
 
     return (
+        <View>
       <View style={{padding:SIZES.padding*2}} >
         
         <Text style={styles.text}>Categories</Text>
 
         <FlatList {...params.list}/> 
+
+       
+      </View>
+
+      
       </View>
     )
+
+    
   }
 
     const styles = StyleSheet.create({
@@ -97,4 +102,9 @@ export default function MainCategories() {
             color: COLORS.black,
             
         },
+        icons:{
+            width: 30,
+            height: 30
+        },
+        
     })
