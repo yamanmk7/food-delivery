@@ -11,7 +11,7 @@ const restaurantData = [
         name: " Burger",
         rating: 4.8,
         categories: [5, 7],
-        price: "$39",
+        price: affordable,
         photo: images.burgerRestaurant,
         duration: "30 - 45 min",
         location: {
@@ -54,7 +54,7 @@ const restaurantData = [
         name: " Pizza",
         rating: 4.8,
         categories: [2, 4, 6],
-        price: "$39",
+        price: affordable,
         photo: images.pizzaRestaurant,
         duration: "15 - 20 min",
         location: {
@@ -132,7 +132,7 @@ const restaurantData = [
         name: " Sushi",
         rating: 4.8,
         categories: [8],
-        price: "$39",
+        price: fairPrice,
         photo: images.sushi,
         duration: "10 - 15 min",
         location: {
@@ -159,7 +159,7 @@ const restaurantData = [
         name: " Cuisine",
         rating: 4.8,
         categories: [1, 2],
-        price: "$39",
+        price: fairPrice,
         photo: images.noodleShop,
         duration: "15 - 20 min",
         location: {
@@ -212,7 +212,7 @@ const restaurantData = [
         name: " Dessets",
         rating: 4.9,
         categories: [9, 10],
-        price: "$39",
+        price: expensive,
         photo: images.kekLapis,
         duration: "35 - 40 min",
         location: {

@@ -2,15 +2,13 @@ import icons from "../constans/icons"
     const categoryData = [
         {
             id: 1,
-           
-            name: "Burgers",
-            icon: icons.hamburger,
+            name: "Rice",
+            icon: icons.rice_bowl,
         },
         {
             id: 2,
-           
-            name: "Pizza",
-            icon: icons.pizza,
+            name: "Noodles",
+            icon: icons.noodle,
         },
         {
             id: 3,
@@ -24,14 +22,13 @@ import icons from "../constans/icons"
         },
         {
             id: 5,
-            
-            name: "Noodles",
-            icon: icons.noodle,
+            name: "Burgers",
+            icon: icons.hamburger,
         },
         {
             id: 6,
-            name: "Rice",
-            icon: icons.rice_bowl,
+            name: "Pizza",
+            icon: icons.pizza,
         },
         {
             id: 7,

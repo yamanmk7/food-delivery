@@ -10,6 +10,7 @@ import Tabs from "./Screens/tabs";
 import OrderScreen from "./src/component/OrderScreen";
 import UserScreen from "./src/component/UserScreen";
 import SingIn from "./Screens/Singin/SingIn";
+import Restaurant from "./src/component/Restaurant";
 
 
 
@@ -30,6 +31,7 @@ const App = () => {
         <Stack.Screen name="OrderScreen" component={OrderScreen} options={{headerShown:false}}/>
         <Stack.Screen name="UserScreen" component={UserScreen} options={{headerShown:false}}/>
         <Stack.Screen name="SingIn" component={SingIn} options={{headerShown:false}}/>
+        <Stack.Screen name="Restaurant" component={Restaurant} options={{headerShown:false}}/>
       </Stack.Navigator>
     </NavigationContainer>
     
