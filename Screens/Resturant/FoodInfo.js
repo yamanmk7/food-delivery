@@ -28,7 +28,7 @@ const FoodInfo = () => {
 
             } 
             
-
+    
         </Animated.ScrollView>
     )
 };
