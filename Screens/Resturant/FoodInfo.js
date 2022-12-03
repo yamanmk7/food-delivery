@@ -26,7 +26,8 @@ const FoodInfo = () => {
                     </View>
                 ))
 
-            }
+            } 
+            
 
         </Animated.ScrollView>
     )
