@@ -44,11 +44,11 @@ const UserScreen = () => {
 
                     <View style={styles.info}>
                     <TouchableOpacity>
-                        <Text style={styles.input}>y4manor7@gmail.com</Text>
+                        <TextInput style={styles.input} placeholder="Add Email"></TextInput>
                     </TouchableOpacity>
                     </View>
 
-                        <TouchableOpacity onPress={()=> navigation.goBack()}>
+                        <TouchableOpacity onPress={()=> navigation.navigate("Home")}>
                         <Text style={styles.text}>Logout</Text>
                     </TouchableOpacity>
                     
@@ -136,6 +136,7 @@ const styles = StyleSheet.create({
     input:{
         fontSize:15,
         fontWeight:"bold",
+        
         
     } ,
     text:{

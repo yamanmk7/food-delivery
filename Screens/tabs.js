@@ -5,6 +5,8 @@ import Home from "../src/component/Home";
 import COLORS from "../assets/Colors";
 import icons from "../constans/icons";
 import SingUp from "./Singin/SingUp";
+import BottomPopUp from "./popup/BottomPopUp";
+
 
 
 const Tab = createBottomTabNavigator();
@@ -43,7 +45,7 @@ const Tabs = () => {
 
 
 
-            <Tab.Screen  name="User" component={SingUp} options={{ headerShown:false,
+            <Tab.Screen  name="User" component={BottomPopUp} options={{ headerShown:false,
                 tabBarIcon: ({focused}) => (
                     <Image   source={icons.user} resizeMode='contain' style={{ width:30,
                         height:30, 
