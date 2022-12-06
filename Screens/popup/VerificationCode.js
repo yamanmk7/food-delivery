@@ -2,7 +2,15 @@ import React from "react";
 import { View, Text, StyleSheet,Image, Touchable, TouchableOpacity, TextInput} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import icons from "../../constans/icons";
+import { useRef } from "react";
+
+
 const VerificationCode = () => {
+
+    const FirsInput = useRef();
+    const SecondInput = useRef();
+    const ThirdInput = useRef();
+    const FourthInput = useRef();
     
         const navigation = useNavigation();
     
@@ -23,10 +31,21 @@ const VerificationCode = () => {
     
         <View style={styles.input}>
             
-           <TextInput style={styles.code} placeholder="*"></TextInput>
-           <TextInput style={styles.code} placeholder="*"></TextInput>
-           <TextInput style={styles.code} placeholder="*"></TextInput>
-           <TextInput style={styles.code} placeholder="*"></TextInput>
+           <TextInput style={styles.code} placeholder="*"
+            maxLength={1}   ref={FirsInput} onChangeText={(text)=>{
+                text&&SecondInput.current.focus();
+            }} ></TextInput>
+           <TextInput style={styles.code} placeholder="*"
+            maxLength ref={SecondInput} onChangeText={(text)=>{
+                text?ThirdInput.current.focus():FirsInput.current.focus()  }} ></TextInput>
+
+           <TextInput style={styles.code} placeholder="*"
+            maxLength ref={ThirdInput} onChangeText={(text)=>{
+                text? FourthInput.current.focus(): SecondInput.current.focus()}} ></TextInput>
+
+           <TextInput style={styles.code} placeholder="*"
+            maxLength ref={FourthInput} onChangeText={(text)=>{
+                text? FourthInput.current.focus():ThirdInput.current.focus()}}></TextInput>
 
 
         </View>
@@ -100,8 +119,8 @@ const styles = StyleSheet.create({
     code: {
         borderWidth: 1,
         borderColor: 'black',
-        width: 40,
-        height: 40,
+        width: 50,
+        height: 50,
         marginLeft: 20,
         borderRadius: 10,
         padding: 15,
