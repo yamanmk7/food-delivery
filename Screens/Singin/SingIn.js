@@ -15,7 +15,7 @@ const SingIn = () => {
                     <Text style={styles.newAcc}>Welcome Back</Text>
                     <Text style={styles.text1}>Enter your Email and Password </Text>
                     <Text style={styles.text1}>for SingIn</Text>
-                    <TouchableOpacity onPress={()=> navigation.goBack()}>
+                    <TouchableOpacity onPress={() => navigation.navigate("SingUp")}>
                     <Text style={styles.text2}>Don't have an account?</Text>
                     </TouchableOpacity>
                 </View>
