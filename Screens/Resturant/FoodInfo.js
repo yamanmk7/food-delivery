@@ -14,11 +14,15 @@ const FoodInfo = (props) => {
         const menuItems = menu.map((item, index) => (
             <View key={`menu-${index}`}
                 style={{ alignItems: 'center' }} >
-
+                 
+                 <View>
+                    <Text style={{ fontSize: 15, fontWeight: 'bold' }}>{item.name}</Text>
+                </View>
                 <View style={styles.img}>
                     <Image style={styles.photo} source={item.photo}
                         resizeMode="cover" />
                 </View>
+               
             </View>
         ))
 
@@ -50,7 +54,7 @@ const styles = StyleSheet.create({
         
     },
     photo: {
-        height: "60%",
+        height: 200,
         width: 200,
         borderRadius: SIZES.radius,
         marginLeft: -190,

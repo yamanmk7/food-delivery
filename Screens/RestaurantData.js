@@ -29,7 +29,7 @@ const restaurantData = [
                 photo: images.crispyChickenBurger,
                 description: "Burger with crispy chicken, cheese and lettuce",
                 calories: 200,
-                price: 10
+                price: '10$'
             },
             {
                 menuId: 2,
@@ -37,7 +37,7 @@ const restaurantData = [
                 photo: images.honeyMustardChickenBurger,
                 description: "Crispy Chicken Burger with Honey Mustard Coleslaw",
                 calories: 250,
-                price: 15
+                price: '$15'
             },
             {
                 menuId: 3,
@@ -45,7 +45,7 @@ const restaurantData = [
                 photo: images.bakedFries,
                 description: "Crispy Baked French Fries",
                 calories: 194,
-                price: 8
+                price: "$8"
             }
         ]
     },
@@ -72,7 +72,7 @@ const restaurantData = [
                 photo: images.hawaiianPizza,
                 description: "Canadian bacon, homemade pizza crust, pizza sauce",
                 calories: 250,
-                price: 15
+                price: '$15'
             },
             {
                 menuId: 5,
@@ -80,7 +80,7 @@ const restaurantData = [
                 photo: images.pizza,
                 description: "Fresh tomatoes, aromatic basil pesto and melted bocconcini",
                 calories: 250,
-                price: 20
+                price: '$15'
             },
             {
                 menuId: 6,
@@ -88,7 +88,7 @@ const restaurantData = [
                 photo: images.tomatoPasta,
                 description: "Pasta with fresh tomatoes",
                 calories: 100,
-                price: 10
+                price: '$15'
             },
             {
                 menuId: 7,
@@ -96,7 +96,7 @@ const restaurantData = [
                 photo: images.salad,
                 description: "Finely chopped lettuce, tomatoes, cucumbers",
                 calories: 100,
-                price: 10
+                price:'$15'
             }
         ]
     },
@@ -123,7 +123,7 @@ const restaurantData = [
                 photo: images.hotDogRestaurant,
                 description: "Fresh tomatoes, all beef hot dogs",
                 calories: 100,
-                price: 20
+                price: '$15'
             }
         ]
     },
@@ -150,7 +150,7 @@ const restaurantData = [
                 photo: images.sushi,
                 description: "Fresh salmon, sushi rice, fresh juicy avocado",
                 calories: 100,
-                price: 50
+                price: '$15'
             }
         ]
     },
@@ -177,7 +177,7 @@ const restaurantData = [
                 photo: images.kolo_mee,
                 description: "Noodles with char siu",
                 calories: 200,
-                price: 5
+                price: '$15'
             },
             {
                 menuId: 11,
@@ -185,7 +185,7 @@ const restaurantData = [
                 photo: images.sarawakLaksa,
                 description: "Vermicelli noodles, cooked prawns",
                 calories: 300,
-                price: 8
+                price: '$15'
             },
             {
                 menuId: 12,
@@ -193,7 +193,7 @@ const restaurantData = [
                 photo: images.nasiLemak,
                 description: "A traditional Malay rice dish",
                 calories: 300,
-                price: 8
+                price: '$15'
             },
             {
                 menuId: 13,
@@ -201,7 +201,7 @@ const restaurantData = [
                 photo: images.nasiBriyaniMutton,
                 description: "A traditional Indian rice dish with mutton",
                 calories: 300,
-                price: 8
+                price: '$15'
             },
 
         ]
@@ -230,7 +230,7 @@ const restaurantData = [
                 photo: images.teh_c_peng,
                 description: "Three Layer Teh C Peng",
                 calories: 100,
-                price: 2
+                price: '$15'
             },
             {
                 menuId: 13,
@@ -238,7 +238,7 @@ const restaurantData = [
                 photo: images.iceKacang,
                 description: "Shaved Ice with red beans",
                 calories: 100,
-                price: 3
+                price: '$15'
             },
             {
                 menuId: 14,
@@ -246,7 +246,7 @@ const restaurantData = [
                 photo: images.kekLapis,
                 description: "Layer cakes",
                 calories: 300,
-                price: 20
+                price: '$15'
             }
         ]
 
