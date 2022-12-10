@@ -13,7 +13,7 @@ const UserScreen = () => {
             <View style={styles.header}>
 
                 <Text style={styles.profile}>Profile</Text>
-                <View style={styles.user1}></View>
+                
             </View>
             <View style={styles.body}>
                 <View style={styles.user}>
@@ -100,15 +100,17 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         alignSelf: "center",
         marginTop: -50,
+        elevation: 11,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        
     },
-    user1: {
-        backgroundColor: 'white',
-        height: 150,
-        width: 150,
-        borderRadius: 100,
-        alignSelf: "center",
-        marginTop: 20,
-    },
+   
     usericon: {
         height: 100,
         width: 100,

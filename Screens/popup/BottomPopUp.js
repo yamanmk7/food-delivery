@@ -1,17 +1,32 @@
-import React from "react";
-import { View, Text, StyleSheet,Image, Touchable, TouchableOpacity} from "react-native";
+import React, { useRef } from "react";
+import { View, Text, StyleSheet,Image, Touchable, TouchableOpacity, Modal} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import icons from "../../constans/icons";
 import { TextInput } from "react-native-gesture-handler";
+import { useState } from "react";
+import ActionSheet from "react-native-actions-sheet";
  
 
 const BottomPopUp = () => {
+    const [modalOpen , setModalOpen ] = useState(false);
 
     const navigation = useNavigation();
-
+    let actionsheet = useRef();
+    let optionArray = [
+        'Option 1',
+        'Option 2',
+        'Option 3',
+    ];
+    const showActionSheet = () => {
+        actionsheet.current?.show();
+    }
     return (
+        <View>
+            {/* <Modal visible={modalOpen} animationType='slide' >
+        
        <View style={styles.Container} >
-
+     
+   
        
     <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -36,7 +51,76 @@ const BottomPopUp = () => {
         <Text style={styles.buttonText}>Next</Text>
     </TouchableOpacity>
 
+   
 
+
+    </View>
+    
+  <Text style={{marginTop:100}} onPress={()=> setModalOpen(false)}>Modal</Text>
+
+    </Modal>
+
+    <Text style={{marginTop:100}} onPress={()=> setModalOpen(true)}>BottomPopUp</Text> */}
+     
+      
+
+       <Text style={{marginTop:100}} onPress={showActionSheet}>
+        open ActionSheet
+       </Text>
+         <ActionSheet  ref={actionsheet}
+            title={'Select a option'}
+            options={optionArray}
+            cancelButtonIndex={4}
+            destructiveButtonIndex={3}
+            onPress={(index) => {
+                alert(optionArray[index]);
+            }}>
+
+                       
+        
+       <View style={styles.Container} >
+     
+   
+       
+    <View style={styles.header}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <Image style={styles.back} source={icons.back}/>
+        </TouchableOpacity>
+        <Text style={styles.text}>Enter your mobail number</Text>
+        
+    </View>
+
+    
+    <Text style={styles.text1}>We will send you confirmation code</Text>
+
+    <View style={styles.input}>
+        
+        <Text style={styles.areaNum}>+972</Text>
+        <View style={styles.input1}>
+        <TextInput placeholder="000000000"></TextInput>
+        </View>
+    </View>
+
+    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("VerificationCode")}>
+        <Text style={styles.buttonText}>Next</Text>
+    </TouchableOpacity>
+
+   
+
+
+    </View>
+    
+  
+
+    
+
+  
+
+         </ActionSheet>
+        
+         
+            
+       
     </View>
    
     );
@@ -44,11 +128,7 @@ const BottomPopUp = () => {
 
 const styles = StyleSheet.create({
     Container: {
-        
-       
-     
-
-
+ 
     },
     header: {
         flexDirection: 'row',

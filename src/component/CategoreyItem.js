@@ -19,7 +19,7 @@ const CategoreyItem = (props) => {
     }
     return (
         <TouchableOpacity
-            style={{
+            style={{ 
                 padding: SIZES.padding,
                 paddingBottom: SIZES.padding * 2,
                 backgroundColor: (homePageCategory?.id == item.id) ? COLORS.primary : COLORS.white,
