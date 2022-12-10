@@ -3,6 +3,8 @@ import { View, Text, StyleSheet,Image, Touchable, TouchableOpacity, TextInput} f
 import { useNavigation } from "@react-navigation/native";
 import icons from "../../constans/icons";
 import { useRef } from "react";
+import ActionSheet from "react-native-actions-sheet";
+
 
 
 const VerificationCode = () => {
@@ -13,8 +15,26 @@ const VerificationCode = () => {
     const FourthInput = useRef();
     
         const navigation = useNavigation();
+        let actionsheet = useRef();
+        let optionArray = [
+            'Option 1',
+            'Option 2',
+            'Option 3',
+    
+        ];
+        
+        const showActionSheet = () => {
+            actionsheet.current?.show();
+        }
     
         return (
+            <View>
+                <ActionSheet 
+                ref={actionsheet}
+                title={'Select a option'}
+                options={optionArray}
+                onPress={(index) => {
+                    alert(optionArray[index]);}}>
         <View style={styles.Container} >
     
         
@@ -54,6 +74,8 @@ const VerificationCode = () => {
         onPress={() => navigation.navigate("UserScreen")}>
             <Text style={styles.buttonText}>Verify phine number</Text>
         </TouchableOpacity>
+        </View>
+        </ActionSheet>
         </View>
 
 )}

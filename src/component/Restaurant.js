@@ -5,12 +5,15 @@ import RestaurantHeader from "../../Screens/Resturant/RestaurantHeader";
 import FoodInfo from "../../Screens/Resturant/FoodInfo";
 
 
-const Restaurant = () => {
+const Restaurant = (props) => {
+const {item} = props.route?.params || {} ; 
+
+console.log('item: ' , item);
  const [restaurant, setrestaurant] = React.useState(null);
     return (
         <SafeAreaView style={styles.container}>
             <RestaurantHeader/>
-            <FoodInfo/>
+            <FoodInfo menu={item?.menu}/>
         </SafeAreaView>
     )
 };

@@ -21,7 +21,7 @@ const RestaurantCard = (props) => {
         <TouchableOpacity
             style={{ marginBottom: SIZES.padding * 2 }}
             onPress={() => navigation.navigate("Restaurant", {
-                item,
+                item: item,
 
             })}
         >
