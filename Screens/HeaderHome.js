@@ -6,11 +6,13 @@ import SIZES from '../assets/sizes'
 import COLORS from '../assets/Colors'
 import { Colors } from 'react-native/Libraries/NewAppScreen'
 import { useState } from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 
 
 
  export default function Header  ()  {
+    const navigation = useNavigation()
 
     const initialCurrentLocation = {
         streetName: " Location",
@@ -35,7 +37,9 @@ import { useState } from 'react'
        </View>
         </View>
 
-        <TouchableOpacity style={styles.bascketContainer}>
+        <TouchableOpacity style={styles.bascketContainer} 
+        onPress={() => navigation.navigate("StoreScreen")}
+        >
             <Image source={icons.basket} style={styles.basket} resizeMode="contain" />
 
         </TouchableOpacity>

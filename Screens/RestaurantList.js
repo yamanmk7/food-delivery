@@ -1,12 +1,27 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { FlatList, StyleSheet } from 'react-native'
 import COLORS from '../assets/Colors'
 import SIZES from '../assets/sizes'
 import restaurantData from '../Screens/RestaurantData'
 import RestaurantCard from '../src/component/RestaurantCard'
+import FoodDelivryContext from '../store/FoodDelivryContext'
 
 const RestaurantList = ({ props }) => {
-  const [restaurants, setRestaurants] = useState(restaurantData);
+
+  const {setHomePageCategory , homePageCategory} = useContext(FoodDelivryContext) ; 
+
+  // const [restaurants, setRestaurants] = useState(restaurantData);
+
+  const renderRestuarants = () => {
+      if(!homePageCategory){
+        console.log("all");
+        return restaurantData ; 
+      }
+      const res = restaurantData.filter(restuarant => {
+        return restuarant?.categories.find(id => id == homePageCategory?.id)
+      })
+      return res ; 
+  }
 
   const renderItem = ({ item }) => {
     return <RestaurantCard item={item} />
@@ -14,7 +29,7 @@ const RestaurantList = ({ props }) => {
 
   return (
     <FlatList
-      data={restaurants}
+      data={renderRestuarants()}
       keyExtractor={item => `${item.id}`}
       renderItem={renderItem}
       contentContainerStyle={{

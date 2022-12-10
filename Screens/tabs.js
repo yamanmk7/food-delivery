@@ -1,7 +1,7 @@
 import React from "react";
 import { View,Text, TouchableOpacity,Image, StyleSheet } from "react-native";
 import { createBottomTabNavigator, BottomTabBar } from "@react-navigation/bottom-tabs";
-import Home from "../src/component/Home";
+import Home from "./HomeScreen/Home";
 import COLORS from "../assets/Colors";
 import icons from "../constans/icons";
 import SingUp from "./Singin/SingUp";
@@ -24,7 +24,7 @@ const Tabs = () => {
             }} />
 
 
-           <Tab.Screen  name="Search" component={Home} options={{
+           <Tab.Screen  name="Search" component={Home} options={{headerShown:false,
                 tabBarIcon: ({focused}) => (
                     <Image   source={icons.search} resizeMode='contain' style={{ width:30,
                         height:30, 

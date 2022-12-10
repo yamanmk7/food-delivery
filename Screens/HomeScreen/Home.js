@@ -4,19 +4,17 @@ import images from '../../constans/images'
 import icons from '../../constans/icons'
 import SIZES from '../../assets/sizes'
 import COLORS from '../../assets/Colors'
-import Header from '../../Screens/HeaderHome'
-import MainCategories from '../../Screens/MainCategory'
-import RestaurantList from '../../Screens/RestaurantList'
+import Header from '../HeaderHome'
+import MainCategories from '../MainCategory'
+import RestaurantList from '../RestaurantList'
 
 
 const Home = () => {
   return (
    <SafeAreaView  style={styles.container} >
         <Header/>
-        <MainCategories/>
+        <MainCategories />
         <RestaurantList/>
-        
-        
    </SafeAreaView>
   )
 }
