@@ -83,11 +83,12 @@ const FoodInfoOrderSc = () => {
                 >
                 <View style={styles.pluse}><Text style={styles.pluse1}>+</Text></View>
                 </TouchableOpacity>
-
+            
                 <Text style={styles.burgerName}>crispy Chicken Burger   -  $49  </Text>
                 <Text style={styles.description}>Burger with Crispy chicken, cheese and lettuce </Text>
                 <Text style={styles.calorys}>Calorys: 200</Text>
                 <Image source={icons.fire} style={styles.fire} />
+
             </View>
 
 
@@ -168,7 +169,7 @@ const styles = StyleSheet.create({
         fontSize:20,
         fontWeight:'bold',
         color:COLORS.black,
-        marginLeft:-200,
+        marginLeft:-220,
         marginTop:20,
         
     } ,
@@ -183,7 +184,7 @@ const styles = StyleSheet.create({
         fontSize:15,
         fontWeight:'bold',
         color:COLORS.black,
-        marginLeft:-210,
+        marginLeft:-270,
         marginTop:85,
 
     } ,

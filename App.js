@@ -38,6 +38,7 @@ const App = () => {
           <Stack.Screen name="Restaurant" component={Restaurant} options={{ headerShown: false }} />
           <Stack.Screen name="BottomPopUp" component={BottomPopUp} options={{ headerShown: false }} />
           <Stack.Screen name="VerificationCode" component={VerificationCode} options={{ headerShown: false }} />
+
         </Stack.Navigator>
       </NavigationContainer>
     </FoodDelivryProvider>
