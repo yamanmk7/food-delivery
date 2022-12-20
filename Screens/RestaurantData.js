@@ -127,130 +127,131 @@ const restaurantData = [
             }
         ]
     },
-    {
-        id: 4,
-        name: " Sushi",
-        rating: 4.8,
-        categories: [8],
-        price: fairPrice,
-        photo: images.sushi,
-        duration: "10 - 15 min",
-        location: {
-            latitude: 1.5578068150528928,
-            longitude: 110.35482523764315,
-        },
-        courier: {
-            avatar: images.avatar4,
-            name: "Ahmad"
-        },
-        menu: [
-            {
-                menuId: 9,
-                name: "Sushi sets",
-                photo: images.sushi,
-                description: "Fresh salmon, sushi rice, fresh juicy avocado",
-                calories: 100,
-                price: '$15'
-            }
-        ]
-    },
-    {
-        id: 5,
-        name: " Cuisine",
-        rating: 4.8,
-        categories: [1, 2],
-        price: fairPrice,
-        photo: images.noodleShop,
-        duration: "15 - 20 min",
-        location: {
-            latitude: 1.558050496260768,
-            longitude: 110.34743759630511,
-        },
-        courier: {
-            avatar: images.avatar4,
-            name: "yazan"
-        },
-        menu: [
-            {
-                menuId: 10,
-                name: "Kolo Mee",
-                photo: images.kolo_mee,
-                description: "Noodles with char siu",
-                calories: 200,
-                price: '$15'
-            },
-            {
-                menuId: 11,
-                name: "Sarawak Laksa",
-                photo: images.sarawakLaksa,
-                description: "Vermicelli noodles, cooked prawns",
-                calories: 300,
-                price: '$15'
-            },
-            {
-                menuId: 12,
-                name: "Nasi Lemak",
-                photo: images.nasiLemak,
-                description: "A traditional Malay rice dish",
-                calories: 300,
-                price: '$15'
-            },
-            {
-                menuId: 13,
-                name: "Nasi Briyani with Mutton",
-                photo: images.nasiBriyaniMutton,
-                description: "A traditional Indian rice dish with mutton",
-                calories: 300,
-                price: '$15'
-            },
+    
+    // {
+    //     id: 4,
+    //     name: " Sushi",
+    //     rating: 4.8,
+    //     categories: [8],
+    //     price: fairPrice,
+    //     photo: images.sushi,
+    //     duration: "10 - 15 min",
+    //     location: {
+    //         latitude: 1.5578068150528928,
+    //         longitude: 110.35482523764315,
+    //     },
+    //     courier: {
+    //         avatar: images.avatar4,
+    //         name: "Ahmad"
+    //     },
+    //     menu: [
+    //         {
+    //             menuId: 9,
+    //             name: "Sushi sets",
+    //             photo: images.sushi,
+    //             description: "Fresh salmon, sushi rice, fresh juicy avocado",
+    //             calories: 100,
+    //             price: '$15'
+    //         }
+    //     ]
+    // },
+    // {
+    //     id: 5,
+    //     name: " Cuisine",
+    //     rating: 4.8,
+    //     categories: [1, 2],
+    //     price: fairPrice,
+    //     photo: images.noodleShop,
+    //     duration: "15 - 20 min",
+    //     location: {
+    //         latitude: 1.558050496260768,
+    //         longitude: 110.34743759630511,
+    //     },
+    //     courier: {
+    //         avatar: images.avatar4,
+    //         name: "yazan"
+    //     },
+    //     menu: [
+    //         {
+    //             menuId: 10,
+    //             name: "Kolo Mee",
+    //             photo: images.kolo_mee,
+    //             description: "Noodles with char siu",
+    //             calories: 200,
+    //             price: '$15'
+    //         },
+    //         {
+    //             menuId: 11,
+    //             name: "Sarawak Laksa",
+    //             photo: images.sarawakLaksa,
+    //             description: "Vermicelli noodles, cooked prawns",
+    //             calories: 300,
+    //             price: '$15'
+    //         },
+    //         {
+    //             menuId: 12,
+    //             name: "Nasi Lemak",
+    //             photo: images.nasiLemak,
+    //             description: "A traditional Malay rice dish",
+    //             calories: 300,
+    //             price: '$15'
+    //         },
+    //         {
+    //             menuId: 13,
+    //             name: "Nasi Briyani with Mutton",
+    //             photo: images.nasiBriyaniMutton,
+    //             description: "A traditional Indian rice dish with mutton",
+    //             calories: 300,
+    //             price: '$15'
+    //         },
 
-        ]
-    },
-    {
+    //     ]
+    // },
+    // {
 
-        id: 6,
-        name: " Dessets",
-        rating: 4.9,
-        categories: [9, 10],
-        price: expensive,
-        photo: images.kekLapis,
-        duration: "35 - 40 min",
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-        courier: {
-            avatar: images.avatar1,
-            name: "Soul"
-        },
-        menu: [
-            {
-                menuId: 12,
-                name: "Teh C Peng",
-                photo: images.teh_c_peng,
-                description: "Three Layer Teh C Peng",
-                calories: 100,
-                price: '$15'
-            },
-            {
-                menuId: 13,
-                name: "ABC Ice Kacang",
-                photo: images.iceKacang,
-                description: "Shaved Ice with red beans",
-                calories: 100,
-                price: '$15'
-            },
-            {
-                menuId: 14,
-                name: "Kek Lapis",
-                photo: images.kekLapis,
-                description: "Layer cakes",
-                calories: 300,
-                price: '$15'
-            }
-        ]
+    //     id: 6,
+    //     name: " Dessets",
+    //     rating: 4.9,
+    //     categories: [9, 10],
+    //     price: expensive,
+    //     photo: images.kekLapis,
+    //     duration: "35 - 40 min",
+    //     location: {
+    //         latitude: 1.5573478487252896,
+    //         longitude: 110.35568783282145,
+    //     },
+    //     courier: {
+    //         avatar: images.avatar1,
+    //         name: "Soul"
+    //     },
+    //     menu: [
+    //         {
+    //             menuId: 12,
+    //             name: "Teh C Peng",
+    //             photo: images.teh_c_peng,
+    //             description: "Three Layer Teh C Peng",
+    //             calories: 100,
+    //             price: '$15'
+    //         },
+    //         {
+    //             menuId: 13,
+    //             name: "ABC Ice Kacang",
+    //             photo: images.iceKacang,
+    //             description: "Shaved Ice with red beans",
+    //             calories: 100,
+    //             price: '$15'
+    //         },
+    //         {
+    //             menuId: 14,
+    //             name: "Kek Lapis",
+    //             photo: images.kekLapis,
+    //             description: "Layer cakes",
+    //             calories: 300,
+    //             price: '$15'
+    //         }
+    //     ]
 
-    }
+    // }
 
 
 ]

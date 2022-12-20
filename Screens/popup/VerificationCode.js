@@ -29,12 +29,12 @@ const VerificationCode = () => {
     
         return (
             <View>
-                <ActionSheet 
+                {/* <ActionSheet 
                 ref={actionsheet}
                 title={'Select a option'}
                 options={optionArray}
                 onPress={(index) => {
-                    alert(optionArray[index]);}}>
+                    alert(optionArray[index]);}}> */}
         <View style={styles.Container} >
     
         
@@ -75,7 +75,7 @@ const VerificationCode = () => {
             <Text style={styles.buttonText}>Verify phine number</Text>
         </TouchableOpacity>
         </View>
-        </ActionSheet>
+        {/* </ActionSheet> */}
         </View>
 
 )}
