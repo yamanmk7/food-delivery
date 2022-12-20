@@ -1,43 +1,41 @@
 import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity, Image, Animated } from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
 import SIZES from '../assets/sizes'
 import COLORS from '../assets/Colors'
 import icons from '../constans/icons'
 import images from '../constans/images'
 import restaurantData from './RestaurantData'
+import FoodDelivryContext from '../store/FoodDelivryContext'
 
 const FoodInfoOrderSc = (props) => {
+    const { cart, setCart } = useContext(FoodDelivryContext);
+
     const [orderItems, setOrderItems] = React.useState([])
-    const {item} = props;
+    const { item } = props;
 
-    const editOrder = (action, menuId, price) => {
-        let orderList = orderItems.slice()
-        let item = orderList.filter(a => a.menuId == menuId)
-
+    const editOrder = (action) => {
+        let orderAmount = cart[item.menuId]?.amount || 0;
+        console.log('orderAmount: ' , orderAmount);
         if (action == "+") {
-            if (item.length > 0) {
-                let newQty = item[0].qty + 1
-                item[0].qty = newQty
-                item[0].total = item[0].qty * price
-            } else {
-                const newItem = {
-                    menuId: menuId,
-                    qty: 1,
-                    price: price,
-                    total: price
+            orderAmount++;
+            setCart({
+                [item.menuId]: {
+                    item: item,
+                    amount: orderAmount,
+                    totalPrice: item.price * orderAmount
                 }
-                orderList.push(newItem)
-            }
-            setOrderItems(orderList)
+            })
         } else {
-            if (item.length > 0) {
-                if (item[0].qty > 0) {
-                    let newQty = item[0].qty - 1
-                    item[0].qty = newQty
-                    item[0].total = newQty * price
-                }
+            if (orderAmount > 0) {
+                orderAmount--;
+                setCart({
+                    [item.menuId]: {
+                        item: item,
+                        amount: orderAmount,
+                        totalPrice: parseInt(item.price) * orderAmount
+                    }
+                })
             }
-            setOrderItems(orderList)
         }
     }
 
@@ -52,57 +50,61 @@ const FoodInfoOrderSc = (props) => {
     }
 
 
+    console.log('cart id :', item.menuId, 'cart: ', cart);
+
     return (
-     
-            <View style={styles.container} >
-                <View>
-                    <Image source={item.photo} style={styles.food} />
-                </View>
-                <View style={styles.quantityContainer}>
-                    <TouchableOpacity activeOpacity={0.7}
-                        onPress={() => editOrder("-")}
-                    >
-                        <View style={styles.quantity}>
 
-                            <Text style={styles.menuse}>-</Text>
+        <View style={styles.container} >
+            <View>
+                <Image source={item.photo} style={styles.food} />
+            </View>
+            <View style={styles.quantityContainer}>
+                <TouchableOpacity activeOpacity={0.7}
+                    onPress={() => editOrder("-")}
+                >
+                    <View style={styles.quantity}>
 
-                        </View>
-                    </TouchableOpacity>
-
-                    <View style={styles.number} >
-                        <Text style={styles.num}>{getOrderQty()}</Text>
-                    </View>
-
-                    <TouchableOpacity activeOpacity={0.7}
-                        onPress={() => editOrder("+")}
-                    >
-                        <View style={styles.pluse}><Text style={styles.pluse1}>+</Text></View>
-                    </TouchableOpacity>
-                    <View style={styles.descriptionContainer} >
-                        <Text style={styles.burgerName}>{item.name} {item.price}</Text>
-                        <Text style={styles.description}>{item.description}</Text>
-
-                        <View style={{ flexDirection: 'row', paddingTop: 10 }}>
-                            <Text style={styles.calorys}>Calorys: 200</Text>
-                            <Image source={icons.fire} style={styles.fire} />
-                        </View>
+                        <Text style={styles.menuse}>-</Text>
 
                     </View>
+                </TouchableOpacity>
 
-
+                <View style={styles.number} >
+                    <Text style={styles.num}>{cart[item.menuId]?.amount || 0}</Text>
                 </View>
 
+                <TouchableOpacity activeOpacity={0.7}
+                    onPress={() => editOrder("+")}
+                >
+                    <View style={styles.pluse}>
+                        <Text style={styles.pluse1}>+</Text>
+                    </View>
+                </TouchableOpacity>
+                <View style={styles.descriptionContainer} >
+                    <Text style={styles.burgerName}>{item.name} {item.price}</Text>
+                    <Text style={styles.description}>{item.description}</Text>
+
+                    <View style={{ flexDirection: 'row', paddingTop: 10 }}>
+                        <Text style={styles.calorys}>Calorys: 200</Text>
+                        <Image source={icons.fire} style={styles.fire} />
+                    </View>
+
+                </View>
 
 
             </View>
 
-       
+
+
+        </View>
+
+
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 45,
+        marginTop: 40,
     },
     food: {
         width: 440,

@@ -7,9 +7,7 @@ const StoreInfo =(props) =>{
     return(
       <View style={styles.Container}>
         <View>
-            <Text> 
-               
-            </Text>
+            
         </View>
         
       </View>
