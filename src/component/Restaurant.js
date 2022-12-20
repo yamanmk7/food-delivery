@@ -13,7 +13,7 @@ console.log('item: ' , item);
     return (
         <SafeAreaView style={styles.container}>
             <RestaurantHeader/>
-            <FoodInfo menu={item?.menu}/>
+            <FoodInfo menu={item?.menu}/> 
         </SafeAreaView>
     )
 };

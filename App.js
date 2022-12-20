@@ -15,6 +15,7 @@ import BottomPopUp from "./Screens/popup/BottomPopUp";
 import VerificationCode from "./Screens/popup/VerificationCode";
 import SingUp from "./Screens/Singin/SingUp";
 import FoodDelivryProvider from "./store/FoodDelivryProvider";
+import StoreScreen from "./Screens/store/SroreScreen";
 
 
 const Stack = createNativeStackNavigator();
@@ -38,6 +39,8 @@ const App = () => {
           <Stack.Screen name="Restaurant" component={Restaurant} options={{ headerShown: false }} />
           <Stack.Screen name="BottomPopUp" component={BottomPopUp} options={{ headerShown: false }} />
           <Stack.Screen name="VerificationCode" component={VerificationCode} options={{ headerShown: false }} />
+          <Stack.Screen name="StoreScreen" component={StoreScreen} options={{ headerShown: false }} />
+
 
         </Stack.Navigator>
       </NavigationContainer>
