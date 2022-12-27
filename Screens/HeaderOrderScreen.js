@@ -18,7 +18,7 @@ const HeaderOrderScreen = () => {
         
         <View style={styles.orderView}><Text style={styles.orderText}>Order</Text></View>
         <TouchableOpacity>
-            <Image style={styles.list} source={icons.list} />
+            <Image style={styles.list} source={icons.basket} />
             </TouchableOpacity>
         
        </View>

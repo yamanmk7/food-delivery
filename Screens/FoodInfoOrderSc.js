@@ -84,9 +84,10 @@ const FoodInfoOrderSc = (props) => {
                     <Text style={styles.burgerName}>{item.name} {item.price}</Text>
                     <Text style={styles.description}>{item.description}</Text>
 
-                    <View style={{ flexDirection: 'row', paddingTop: 10 }}>
-                        <Text style={styles.calorys}>Calorys: 200</Text>
-                        <Image source={icons.fire} style={styles.fire} />
+                    <View>
+                        <Text>
+                            {item.Extra}
+                        </Text>
                     </View>
 
                 </View>

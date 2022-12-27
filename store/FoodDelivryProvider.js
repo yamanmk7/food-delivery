@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import FoodDelivryContext from './FoodDelivryContext';
 
+
 const FoodDelivryProvider = props => {
   const [homePageCategory, setHomePageCategory] = useState();
   const [cart, setCart] = useState([]);
@@ -21,7 +22,7 @@ const FoodDelivryProvider = props => {
       delete items[itemMenuId];
       setCart({ ...items })
     }
-  }
+  } 
 
   return (
     <FoodDelivryContext.Provider

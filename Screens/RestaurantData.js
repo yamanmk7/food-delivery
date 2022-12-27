@@ -22,6 +22,26 @@ const restaurantData = [
             avatar: images.avatar1,
             name: "yaman"
         },
+        Extra:[
+            {
+                cheese:'Cheese',
+            },
+            {
+                tomato:'tomato',
+            },  
+          
+          {
+            lettuce:'leeuce',
+          },
+          {
+            onion:'onion',
+
+          }
+          
+
+            
+
+    ],
         menu: [
             {
                 menuId: 1,
@@ -29,7 +49,8 @@ const restaurantData = [
                 photo: images.crispyChickenBurger,
                 description: "Burger with crispy chicken, cheese and lettuce",
                 calories: 200,
-                price: '10$'
+                price: '10$',
+               
             },
             {
                 menuId: 2,
