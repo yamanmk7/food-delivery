@@ -1,11 +1,31 @@
-  // price rating
-  const affordable = 1
-  const fairPrice = 2
-  const expensive = 3
-  import images from "../constans/images"
+// price rating
+const affordable = 1
+const fairPrice = 2
+const expensive = 3
+import images from "../constans/images"
+
+const burgerExtras = [
+    {
+        name: 'Cheese',
+        price: 10 , 
+    },
+    {
+        name: 'tomato',
+        price : 0 , 
+    },
+
+    {
+        name: 'leeuce',
+        price : 0 ,
+    },
+    {
+        name: 'onion',
+        price : 0 ,
+    }
+] ; 
 
 const restaurantData = [
-    
+
     {
         id: 1,
         name: " Burger",
@@ -22,26 +42,28 @@ const restaurantData = [
             avatar: images.avatar1,
             name: "yaman"
         },
-        Extra:[
+        Extra: [
             {
-                cheese:'Cheese',
+                name: 'Cheese',
             },
             {
-                tomato:'tomato',
-            },  
-          
-          {
-            lettuce:'leeuce',
-          },
-          {
-            onion:'onion',
+                name: 'tomato',
+            },
 
-          }
-          
+            {
+                name: 'leeuce',
+            },
+            {
+                name: 'onion',
+            }
+        ],
 
-            
+        //    Extra:{
+        //     cheese:'Cheese',
+        //     tomato:'tomato',
 
-    ],
+        //    },
+
         menu: [
             {
                 menuId: 1,
@@ -50,7 +72,7 @@ const restaurantData = [
                 description: "Burger with crispy chicken, cheese and lettuce",
                 calories: 200,
                 price: '10$',
-               
+                Extra: burgerExtras , 
             },
             {
                 menuId: 2,
@@ -58,14 +80,22 @@ const restaurantData = [
                 photo: images.honeyMustardChickenBurger,
                 description: "Crispy Chicken Burger with Honey Mustard Coleslaw",
                 calories: 250,
-                price: '$15'
+                price: '$15.5'
             },
+            // {
+            //     menuId: 3,
+            //     name: "Crispy Baked French Fries",
+            //     photo: images.bakedFries,
+            //     description: "Crispy Baked French Fries",
+            //     calories: 194,
+            //     price: "$8"
+            // },
             {
-                menuId: 3,
-                name: "Crispy Baked French Fries",
-                photo: images.bakedFries,
-                description: "Crispy Baked French Fries",
-                calories: 194,
+                menuId: 4,
+                name: "xxxxxx",
+                photo: images.burgerRestaurant1,
+                description: "xxxxxxx",
+                calories: 200,
                 price: "$8"
             }
         ]
@@ -74,7 +104,7 @@ const restaurantData = [
         id: 2,
         name: " Pizza",
         rating: 4.8,
-        categories: [2, 4, 6],
+        categories: [2, 6],
         price: affordable,
         photo: images.pizzaRestaurant,
         duration: "15 - 20 min",
@@ -117,7 +147,7 @@ const restaurantData = [
                 photo: images.salad,
                 description: "Finely chopped lettuce, tomatoes, cucumbers",
                 calories: 100,
-                price:'$15'
+                price: '$15'
             }
         ]
     },
@@ -141,14 +171,14 @@ const restaurantData = [
             {
                 menuId: 8,
                 name: "Chicago Style Hot Dog",
-                photo: images.hotDogRestaurant,
+                photo: images.chicagoHotDog,
                 description: "Fresh tomatoes, all beef hot dogs",
                 calories: 100,
                 price: '$15'
             }
         ]
     },
-    
+
     // {
     //     id: 4,
     //     name: " Sushi",
@@ -229,6 +259,8 @@ const restaurantData = [
     //     ]
     // },
     // {
+
+
 
     //     id: 6,
     //     name: " Dessets",

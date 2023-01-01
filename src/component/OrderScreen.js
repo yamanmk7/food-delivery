@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity, Image, Animated } from 'react-native'
+import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity, Image, Animated, ScrollView } from 'react-native'
 import React from 'react'
 import SIZES from '../../assets/sizes'
 import COLORS from '../../assets/Colors'
@@ -12,16 +12,16 @@ import RemderOrderSc from '../../Screens/RemderOrderSc'
 
 const OrderScreen = (props) => {
 
-  const {item} = props.route.params || {} ;
+  const { item } = props.route.params || {};
 
   console.log('item OrderScreen: ', item);
 
   return (
-    <View>
+    <View style={{flex:1}}> 
       <HeaderOrderScreen />
-
-      <FoodInfoOrderSc item={item} />
-      
+      <ScrollView style={{flex:1}}>
+        <FoodInfoOrderSc item={item} />
+      </ScrollView>
       <RemderOrderSc />
     </View>
 

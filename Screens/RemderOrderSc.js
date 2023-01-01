@@ -20,9 +20,10 @@ const RemderOrderSc = () => {
     }
 
     const  sumOrder = () =>  {
-        let total = orderItems.reduce((a, b) => a + (b.total || 0), 0)
-
-        return total.toFixed(2)
+        const prices = Object.values(cart).map((item) => item.totalPrice);
+        console.log("prices: " , prices);
+        var sum = prices.reduce((a, b) => a + b, 0);
+        return sum;
     }
 
     const onOredrPress = () => {
@@ -35,7 +36,7 @@ const RemderOrderSc = () => {
         <View style={styles.Container}>
             <View style={styles.orderContainer}>
                 <Text style={styles.items}>{cartLength} items in Cart</Text>
-                <Text style={styles.price}>${sumOrder}</Text>
+                <Text style={styles.price}>{sumOrder()}$</Text>
             </View>
             <View style={styles.locationContainer}>
                 <View style={styles.location}>
@@ -64,8 +65,7 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.white,
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40,
-        marginTop: 170,
-
+        // marginTop: 90,
     },
     orderContainer: {
         flexDirection: 'row',

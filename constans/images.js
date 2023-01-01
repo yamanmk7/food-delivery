@@ -5,7 +5,7 @@ const images = {
     avatar4: require('../assets/images/avatar-4.jpg'),
     avatar5: require('../assets/images/avatar-5.jpg'),
     bakedFries: require('../assets/images/baked-fries.jpg'),
-    burgerRestaurant: require('../assets/images/burger-restaurant.jpg'),
+    burgerRestaurant1: require('../assets/images/burger-restaurant.jpg'),
     burgerRestaurant: require('../assets/images/burger-restaurant-2.jpg'),
     chicagoHotDog: require('../assets/images/chicago-hot-dog.jpg'),
     crispyChickenBurger: require('../assets/images/crispy-chicken-burger.jpg'),

@@ -6,6 +6,9 @@ import icons from '../constans/icons'
 import images from '../constans/images'
 import restaurantData from './RestaurantData'
 import FoodDelivryContext from '../store/FoodDelivryContext'
+import CheckBox from '@react-native-community/checkbox';
+import ExtraItems from './ExrasItem'
+
 
 const FoodInfoOrderSc = (props) => {
     const { cart, setCart } = useContext(FoodDelivryContext);
@@ -15,14 +18,15 @@ const FoodInfoOrderSc = (props) => {
 
     const editOrder = (action) => {
         let orderAmount = cart[item.menuId]?.amount || 0;
-        console.log('orderAmount: ' , orderAmount);
+        const price = item.price.replace(/[^0-9.]+/g, '')
+        console.log('orderAmount: ', item.price);
         if (action == "+") {
             orderAmount++;
             setCart({
                 [item.menuId]: {
                     item: item,
                     amount: orderAmount,
-                    totalPrice: item.price * orderAmount
+                    totalPrice: price * orderAmount
                 }
             })
         } else {
@@ -32,7 +36,7 @@ const FoodInfoOrderSc = (props) => {
                     [item.menuId]: {
                         item: item,
                         amount: orderAmount,
-                        totalPrice: parseInt(item.price) * orderAmount
+                        totalPrice: price * orderAmount
                     }
                 })
             }
@@ -49,11 +53,27 @@ const FoodInfoOrderSc = (props) => {
         return 0
     }
 
+    const renderExtars = () => {
+        if(!item.Extra){
+            return null;
+        }
+        return item.Extra.map((item, index) => {
+            return (
+                <View style={{flexDirection:'row'}}>
+                    <CheckBox style={styles.CheckBox} onValueChange={(val) => {}}
+                     value={false} />
+                    <Text style={styles.Extras} key={index}>{item.name} :</Text>
+                </View>
+            )
+        })
+    }
 
-    console.log('cart id :', item.menuId, 'cart: ', cart);
+
+
+    console.log('cart id :', item);
+
 
     return (
-
         <View style={styles.container} >
             <View>
                 <Image source={item.photo} style={styles.food} />
@@ -84,14 +104,15 @@ const FoodInfoOrderSc = (props) => {
                     <Text style={styles.burgerName}>{item.name} {item.price}</Text>
                     <Text style={styles.description}>{item.description}</Text>
 
-                    <View>
-                        <Text>
-                            {item.Extra}
-                        </Text>
-                    </View>
+
 
                 </View>
 
+
+            </View>
+            <View>
+                {/* {renderExtars()} */}
+                <ExtraItems item={item} />
 
             </View>
 
@@ -208,6 +229,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
 
+
+
+    },
+    Extras: {
+        fontSize: 15,
+        fontWeight: 'bold',
+        color: COLORS.black,
+        paddingTop: 5,
+        marginLeft: 20,
+        marginTop: 10,
 
 
     },
