@@ -11,23 +11,29 @@ import { useState } from "react";
 
 
 
-
 const FoodInfo = (props) => {
     const { menu } = props;
     const navigation = useNavigation()
-
-
+    const [changeColor, setChangeColor] = useState(false);
+    const handleColorChange = () => {
+        setChangeColor(!changeColor);
+    };
 
 
     // console.log('item: ', props);
 
     const renderMenu = () => {
+        
 
         const menuItems = menu.map((item, index) => (
             <View style={styles.Container}>
                 <View style={styles.foodCard}>
                     <TouchableOpacity > 
-                    <Image style={[styles.favoraitIcon,]} source={icons.like} />
+                    <Image  style={[styles.favoraitIcon,
+                    {tintColor:(changeColor === true)? COLORS.primary :
+                         COLORS.darkgray }  ]}
+                     source={icons.like} />
+                     
                     </TouchableOpacity>
                  
                     <View >
@@ -88,8 +94,8 @@ const styles = StyleSheet.create({
 
     },
     favoraitIcon: {
-        width: 20,
-        height: 20,
+        width: 25,
+        height: 25,
        
         left: 400,
         top: -130,

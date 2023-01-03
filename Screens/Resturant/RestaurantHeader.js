@@ -5,7 +5,10 @@ import icons from "../../constans/icons";
 import SIZES from "../../assets/sizes";
 import React from "react";
 
+
 const RestaurantHeader = () => {
+    
+
     const navigation = useNavigation()
     const [restaurant, setrestaurant] = React.useState(null);
     return(
@@ -22,8 +25,9 @@ const RestaurantHeader = () => {
              </View>
             </View>
 
-            <TouchableOpacity style={styles.listButton}>
-                <Image source={icons.list} style={styles.list} />
+            <TouchableOpacity style={styles.listButton} 
+            onPress={() => navigation.navigate("StoreScreen")} >
+                <Image source={icons.basket} style={styles.list} />
 
             </TouchableOpacity>
         </View>

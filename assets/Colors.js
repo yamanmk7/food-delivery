@@ -1,6 +1,7 @@
 const COLORS = {
     primary: "#FC6011", // Orange
         secondary: "#CDCDD2",   // Gray
+        red : "#FF0000",  // Red
     
         
         black: "#1E1F20",

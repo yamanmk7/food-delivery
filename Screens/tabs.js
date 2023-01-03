@@ -6,6 +6,7 @@ import COLORS from "../assets/Colors";
 import icons from "../constans/icons";
 import SingUp from "./Singin/SingUp";
 import BottomPopUp from "./popup/BottomPopUp";
+import Favorait from "../src/component/Favorait";
 
 
 
@@ -34,7 +35,7 @@ const Tabs = () => {
             }} />
 
 
-            <Tab.Screen  name="Like" component={Home} options={{
+            <Tab.Screen  name="Favorites" component={Favorait} options={{headerShown:false,
                 tabBarIcon: ({focused}) => (
                     <Image   source={icons.like} resizeMode='contain' style={{ width:30,
                         height:30, 

@@ -53,21 +53,21 @@ const FoodInfoOrderSc = (props) => {
         return 0
     }
 
-    const renderExtars = () => {
-        if(!item.Extra){
-            return null;
-        }
-        return item.Extra.map((item, index) => {
-            return (
-                <View style={{flexDirection:'row'}}>
-                    <CheckBox style={styles.CheckBox} onValueChange={(val) => {}}
-                     value={false} />
-                    <Text style={styles.Extras} key={index}>{item.name} :</Text>
-                    <Text></Text>
-                </View>
-            )
-        })
-    }
+    // const renderExtars = () => {
+    //     if(!item.Extra){
+    //         return null;
+    //     }
+    //     return item.Extra.map((item, index) => {
+    //         return (
+    //             <View style={{flexDirection:'row'}}>
+    //                 <CheckBox style={styles.CheckBox} onValueChange={(val) => {}}
+    //                  value={false} />
+    //                 <Text style={styles.Extras} key={index}>{item.name} :</Text>
+    //                 <Text></Text>
+    //             </View>
+    //         )
+    //     })
+    // }
 
 
 
