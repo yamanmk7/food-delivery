@@ -34,7 +34,7 @@ const RemderOrderSc = () => {
 
 
     const sumOrder = () => {
-        const prices = Object.values(cart).map((item) => item.totalPrice );
+        const prices = Object.values(cart).map((item) => item.totalPrice);
         console.log("prices: ", prices);
         var sum = prices.reduce((a, b) => a + b, 0);
         return sum;
