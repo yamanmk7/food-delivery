@@ -63,6 +63,7 @@ const FoodInfoOrderSc = (props) => {
                     <CheckBox style={styles.CheckBox} onValueChange={(val) => {}}
                      value={false} />
                     <Text style={styles.Extras} key={index}>{item.name} :</Text>
+                    <Text></Text>
                 </View>
             )
         })

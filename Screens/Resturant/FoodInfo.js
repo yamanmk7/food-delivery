@@ -7,9 +7,16 @@ import restaurantData from "../RestaurantData";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
 import COLORS from "../../assets/Colors";
 import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
+
+
+
+
 const FoodInfo = (props) => {
     const { menu } = props;
     const navigation = useNavigation()
+
+
 
 
     // console.log('item: ', props);
@@ -19,10 +26,14 @@ const FoodInfo = (props) => {
         const menuItems = menu.map((item, index) => (
             <View style={styles.Container}>
                 <View style={styles.foodCard}>
-                    <Image style={styles.favoraitIcon} source={icons.like} />
+                    <TouchableOpacity > 
+                    <Image style={[styles.favoraitIcon,]} source={icons.like} />
+                    </TouchableOpacity>
+                 
                     <View >
                         <TouchableOpacity onPress={() => navigation.navigate('OrderScreen', { item })}>
                             <Image style={styles.foodImage} source={item.photo} />
+                           
                         </TouchableOpacity>
                     </View>
 
@@ -57,6 +68,8 @@ const styles = StyleSheet.create({
 
         flexDirection: 'row',
         margin: 10,
+        marginLeft: -10,
+        
 
     },
 
@@ -70,16 +83,18 @@ const styles = StyleSheet.create({
     foodName: {
         fontSize: 15,
         fontWeight: 'bold',
-        marginTop: 20,
+        marginTop: 10,
         marginBottom: 10,
 
     },
     favoraitIcon: {
         width: 20,
         height: 20,
-        position: 'absolute',
-        right: 10,
-        tintColor: 'gray',
+       
+        left: 400,
+        top: -130,
+         tintColor: COLORS.darkgray,
+         
 
     },
     caloriesIcon: {
@@ -119,7 +134,7 @@ const styles = StyleSheet.create({
     priceText: {
         fontSize: 15,
         fontWeight: 'bold',
-        marginLeft: 170,
+        marginLeft: 190,
         marginTop: -30,
         position: 'absolute',
     },

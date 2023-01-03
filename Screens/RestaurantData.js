@@ -21,9 +21,59 @@ const burgerExtras = [
     {
         name: 'onion',
         price : 0 ,
-    }
+    },
+    {
+        name: 'frice',
+        price : 5 ,
+    },
 ] ; 
 
+const pizzaExtras = [
+    {
+        name: 'Cheese',
+        price: 10 , 
+    },
+    {
+        name: 'tomato',
+        price : 1 , 
+    },
+
+    {
+        name: 'olive',
+        price : 1 ,
+    },
+    {
+        name: 'tirse',
+        price : 1 ,
+    },
+    {
+        name: 'tuna',
+        price : 5 ,
+    },
+    {
+        name: 'mushroom',
+        price : 5 ,
+    },
+    
+
+] ; 
+
+const hotDogExtras = [
+    {
+        name: 'mustard',
+        price: 0 , 
+    },
+    {
+        name: 'ketchup',
+        price : 0 , 
+    },
+
+    {
+        name: 'pickle',
+        price : 0 ,
+    },
+    
+] ; 
 const restaurantData = [
 
     {
@@ -80,7 +130,8 @@ const restaurantData = [
                 photo: images.honeyMustardChickenBurger,
                 description: "Crispy Chicken Burger with Honey Mustard Coleslaw",
                 calories: 250,
-                price: '$15.5'
+                price: '$15.5',
+                Extra: burgerExtras , 
             },
             // {
             //     menuId: 3,
@@ -96,7 +147,8 @@ const restaurantData = [
                 photo: images.burgerRestaurant1,
                 description: "xxxxxxx",
                 calories: 200,
-                price: "$8"
+                price: "$8",
+                Extra: burgerExtras , 
             }
         ]
     },
@@ -123,7 +175,9 @@ const restaurantData = [
                 photo: images.hawaiianPizza,
                 description: "Canadian bacon, homemade pizza crust, pizza sauce",
                 calories: 250,
-                price: '$15'
+                price: '$15',
+                Extra: pizzaExtras,
+    
             },
             {
                 menuId: 5,
@@ -131,24 +185,26 @@ const restaurantData = [
                 photo: images.pizza,
                 description: "Fresh tomatoes, aromatic basil pesto and melted bocconcini",
                 calories: 250,
-                price: '$15'
+                price: '$15',
+                Extra: pizzaExtras,
             },
-            {
-                menuId: 6,
-                name: "Tomato Pasta",
-                photo: images.tomatoPasta,
-                description: "Pasta with fresh tomatoes",
-                calories: 100,
-                price: '$15'
-            },
-            {
-                menuId: 7,
-                name: "Mediterranean Chopped Salad ",
-                photo: images.salad,
-                description: "Finely chopped lettuce, tomatoes, cucumbers",
-                calories: 100,
-                price: '$15'
-            }
+            // {
+            //     menuId: 6,
+            //     name: "Tomato Pasta",
+            //     photo: images.tomatoPasta,
+            //     description: "Pasta with fresh tomatoes",
+            //     calories: 100,
+            //     price: '$15'
+
+            // },
+            // {
+            //     menuId: 7,
+            //     name: "Mediterranean Chopped Salad ",
+            //     photo: images.salad,
+            //     description: "Finely chopped lettuce, tomatoes, cucumbers",
+            //     calories: 100,
+            //     price: '$15'
+            // }
         ]
     },
     {
@@ -174,7 +230,8 @@ const restaurantData = [
                 photo: images.chicagoHotDog,
                 description: "Fresh tomatoes, all beef hot dogs",
                 calories: 100,
-                price: '$15'
+                price: '$15',
+                Extra: hotDogExtras,
             }
         ]
     },
