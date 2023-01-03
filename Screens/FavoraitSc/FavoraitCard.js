@@ -1,15 +1,14 @@
-import react from "react";
+import react, { useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity, FlatList } from "react-native";
 
 
 const FavoraitCard = (props) => {
+    const { item } = props;
+   
+
     return (
-        <View style={styles.Container}>
-           <View>
-                {/* <Image style={styles.food} source={props.item.photo} /> */}
-           </View>
-              
-        </View>
+       <FlatList  
+        />
     )
 
 }

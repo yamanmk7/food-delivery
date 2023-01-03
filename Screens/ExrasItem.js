@@ -11,6 +11,7 @@ const ExtraItems = (props) => {
     if(!item.Extra){
         return null;
     }
+    
     return item.Extra.map((item, index) => {
         return (
             <View style={styles.CheckBoxContainer}>

@@ -29,6 +29,7 @@ const FoodInfoOrderSc = (props) => {
                     totalPrice: price * orderAmount
                 }
             })
+
         } else {
             if (orderAmount > 0) {
                 orderAmount--;
@@ -52,28 +53,7 @@ const FoodInfoOrderSc = (props) => {
 
         return 0
     }
-
-    // const renderExtars = () => {
-    //     if(!item.Extra){
-    //         return null;
-    //     }
-    //     return item.Extra.map((item, index) => {
-    //         return (
-    //             <View style={{flexDirection:'row'}}>
-    //                 <CheckBox style={styles.CheckBox} onValueChange={(val) => {}}
-    //                  value={false} />
-    //                 <Text style={styles.Extras} key={index}>{item.name} :</Text>
-    //                 <Text></Text>
-    //             </View>
-    //         )
-    //     })
-    // }
-
-
-
     console.log('cart id :', item);
-
-
     return (
         <View style={styles.container} >
             <View>
@@ -81,12 +61,9 @@ const FoodInfoOrderSc = (props) => {
             </View>
             <View style={styles.quantityContainer}>
                 <TouchableOpacity activeOpacity={0.7}
-                    onPress={() => editOrder("-")}
-                >
+                    onPress={() => editOrder("-")}>
                     <View style={styles.quantity}>
-
                         <Text style={styles.menuse}>-</Text>
-
                     </View>
                 </TouchableOpacity>
 
@@ -112,7 +89,7 @@ const FoodInfoOrderSc = (props) => {
 
             </View>
             <View>
-                {/* {renderExtars()} */}
+                
                 <ExtraItems item={item} />
 
             </View>

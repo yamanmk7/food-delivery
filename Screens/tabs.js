@@ -7,6 +7,7 @@ import icons from "../constans/icons";
 import SingUp from "./Singin/SingUp";
 import BottomPopUp from "./popup/BottomPopUp";
 import Favorait from "../src/component/Favorait";
+import Search from "../src/component/Search";
 
 
 
@@ -25,7 +26,7 @@ const Tabs = () => {
             }} /> 
 
 
-           <Tab.Screen  name="Search" component={Home} options={{headerShown:false,
+           <Tab.Screen  name="Search" component={Search} options={{headerShown:false,
                 tabBarIcon: ({focused}) => (
                     <Image   source={icons.search} resizeMode='contain' style={{ width:30,
                         height:30, 

@@ -8,54 +8,23 @@ import { FlatList, ScrollView } from "react-native-gesture-handler";
 import COLORS from "../../assets/Colors";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import MEnuItem from "../../src/component/MenuItem";
 
-
+ 
 
 const FoodInfo = (props) => {
+  
     const { menu } = props;
     const navigation = useNavigation()
-    const [changeColor, setChangeColor] = useState(false);
-    const handleColorChange = () => {
-        setChangeColor(!changeColor);
-    };
-
+   
 
     // console.log('item: ', props);
 
     const renderMenu = () => {
         
 
-        const menuItems = menu.map((item, index) => (
-            <View style={styles.Container}>
-                <View style={styles.foodCard}>
-                    <TouchableOpacity > 
-                    <Image  style={[styles.favoraitIcon,
-                    {tintColor:(changeColor === true)? COLORS.primary :
-                         COLORS.darkgray }  ]}
-                     source={icons.like} />
-                     
-                    </TouchableOpacity>
-                 
-                    <View >
-                        <TouchableOpacity onPress={() => navigation.navigate('OrderScreen', { item })}>
-                            <Image style={styles.foodImage} source={item.photo} />
-                           
-                        </TouchableOpacity>
-                    </View>
-
-                    <Text style={styles.foodName}>{item.name}</Text>
-                </View >
-
-                <View style={styles.caloriesContainer}>
-                    <Text style={styles.caloriesText}>{item.calories}</Text>
-                    <Image style={styles.caloriesIcon} source={icons.fire} />
-                </View>
-
-                <View>
-                    <Text style={styles.priceText}>Price: {item.price}</Text>
-                </View>
-            </View>
-        ))
+        const menuItems = menu.map((item, index) => <MEnuItem item={item} />)
 
         return menuItems;
     }

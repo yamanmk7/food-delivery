@@ -6,26 +6,39 @@ import COLORS from '../assets/Colors'
 import icons from '../constans/icons'
 import strings from '../src/res/strings'
 import FoodDelivryContext from '../store/FoodDelivryContext'
+import ExtraItems from './ExrasItem'
+
 
 const RemderOrderSc = () => {
 
-    const{cart, setCart} = useContext(FoodDelivryContext);
-    console.log('cart: ' , cart);
+    const { cart, setCart } = useContext(FoodDelivryContext);
+    console.log('cart: ', cart);
     const cartLength = Object.keys(cart).length
 
-    const  getBasketItemCount = () =>{
+    const getBasketItemCount = () => {
         let itemCount = orderItems.reduce((a, b) => a + (b.qty || 0), 0)
 
         return itemCount
     }
 
-    const  sumOrder = () =>  {
-        const prices = Object.values(cart).map((item) => item.totalPrice);
-        console.log("prices: " , prices);
+    // const ExtraPrices = (item) => {
+    //     console.log('item.price: ', item.price);
+    //     var sum = 0;
+    //     item.Extra.forEach((EtraItem) => {
+    //         if (EtraItem.checked) {
+    //             sum += EtraItem.price;
+    //         }
+    //     })
+    //     return sum;
+    // }
+
+
+    const sumOrder = () => {
+        const prices = Object.values(cart).map((item) => item.totalPrice );
+        console.log("prices: ", prices);
         var sum = prices.reduce((a, b) => a + b, 0);
         return sum;
     }
-
     const onOredrPress = () => {
         // const order = {
         //     amount : 
