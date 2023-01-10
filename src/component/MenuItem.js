@@ -5,7 +5,6 @@ import COLORS from "../../assets/Colors";
 import icons from "../../constans/icons";
 
 const MenuItem = (props) => {
-
     const { item } = props
 
     const navigation = useNavigation();
@@ -13,6 +12,7 @@ const MenuItem = (props) => {
     const [changeColor, setChangeColor] = useState(false);
     const handleColorChange = () => {
         setChangeColor(!changeColor);
+    
     };
 
     const favColor = {
@@ -40,9 +40,11 @@ const MenuItem = (props) => {
                     <Text style={styles.foodName}>{item.name}</Text>
                     <Text style={styles.priceText}>Price: {item.price}</Text>
                 </View>
-            </View>
+
+            </View> 
 
             <TouchableOpacity onPress={handleColorChange}  >
+
                 <Image
                     style={[styles.favoraitIcon, favColor]}
                     source={icons.like}

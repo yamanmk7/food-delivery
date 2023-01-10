@@ -10,7 +10,7 @@ import ExtraItems from './ExrasItem'
 
 
 const RemderOrderSc = () => {
-
+  
     const { cart, setCart } = useContext(FoodDelivryContext);
     console.log('cart: ', cart);
     const cartLength = Object.keys(cart).length
