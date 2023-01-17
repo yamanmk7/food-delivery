@@ -5,6 +5,21 @@ import FoodDelivryContext from './FoodDelivryContext';
 const FoodDelivryProvider = props => {
   const [homePageCategory, setHomePageCategory] = useState();
   const [cart, setCart] = useState([]);
+  const [order, setorder] = useState([]);
+
+  const setorderItems = (item) => {
+    const itemMenuId = Object.keys(item)[0]
+    const amount = item[itemMenuId].amount;
+    
+    if (amount > 0) {
+      setorder({
+        ...order,
+        ...item
+      })
+    }
+
+  }
+
 
   const setCartItems = (item) => {
     const itemMenuId = Object.keys(item)[0]

@@ -7,30 +7,23 @@ import icons from '../constans/icons'
 import strings from '../src/res/strings'
 import FoodDelivryContext from '../store/FoodDelivryContext'
 import ExtraItems from './ExrasItem'
+import { useNavigation } from '@react-navigation/native'
 
 
 const RemderOrderSc = () => {
-  
+    const navigation = useNavigation()
+    
+
     const { cart, setCart } = useContext(FoodDelivryContext);
     console.log('cart: ', cart);
     const cartLength = Object.keys(cart).length
 
     const getBasketItemCount = () => {
         let itemCount = orderItems.reduce((a, b) => a + (b.qty || 0), 0)
-
+    
         return itemCount
     }
 
-    // const ExtraPrices = (item) => {
-    //     console.log('item.price: ', item.price);
-    //     var sum = 0;
-    //     item.Extra.forEach((EtraItem) => {
-    //         if (EtraItem.checked) {
-    //             sum += EtraItem.price;
-    //         }
-    //     })
-    //     return sum;
-    // }
 
 
     const sumOrder = () => {
@@ -42,7 +35,7 @@ const RemderOrderSc = () => {
     const onOredrPress = () => {
         // const order = {
         //     amount : 
-        // }
+        
     }
 
     return (
@@ -65,7 +58,7 @@ const RemderOrderSc = () => {
             
             <View style={styles.buttonOrder}>
                 <TouchableOpacity style={styles.order} onPress={onOredrPress}>
-                    <Text style={styles.orderText}>{strings.Order}</Text>
+                    <Text  style={styles.orderText}>{strings.Order}</Text>
                 </TouchableOpacity>
             </View>
         </View>
