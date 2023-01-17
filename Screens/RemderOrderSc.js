@@ -60,8 +60,9 @@ const RemderOrderSc = () => {
                     <Image source={icons.mastercard} style={styles.masterCardIcon} />
                     <Text style={styles.cardNum}>4580</Text>
                 </View>
-
+   
             </View>
+            
             <View style={styles.buttonOrder}>
                 <TouchableOpacity style={styles.order} onPress={onOredrPress}>
                     <Text style={styles.orderText}>{strings.Order}</Text>

@@ -30,6 +30,7 @@ const FoodInfoOrderSc = (props) => {
                 }
             })
 
+
         } else {
             if (orderAmount > 0) {
                 orderAmount--;
