@@ -1,5 +1,5 @@
 import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity, Image, Animated } from 'react-native'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import SIZES from '../assets/sizes'
 import COLORS from '../assets/Colors'
 import icons from '../constans/icons'
@@ -11,50 +11,64 @@ import ExtraItems from './ExrasItem'
 
 
 const FoodInfoOrderSc = (props) => {
-    const { cart, setCart } = useContext(FoodDelivryContext);
+    const { cart, setCart, setOrder, order } = useContext(FoodDelivryContext);
 
-    const [orderItems, setOrderItems] = React.useState([])
+    const [orderItems, setOrderItems,] = React.useState([])
     const { item } = props;
+    
+    const price = item.price.replace(/[^0-9.]+/g, '')
+    
+    const initOrder = {
+        item: item,
+        amount: 1,
+        totalPrice: price
+    }
 
     const editOrder = (action) => {
-        let orderAmount = cart[item.menuId]?.amount || 0;
-        const price = item.price.replace(/[^0-9.]+/g, '')
+        let orderAmount = order?.amount || 0;
+
         console.log('orderAmount: ', item.price);
         if (action == "+") {
             orderAmount++;
-            setCart({
-                [item.menuId]: {
-                    item: item,
-                    amount: orderAmount,
-                    totalPrice: price * orderAmount
-                }
+          
+            setOrder({
+                item: item,
+                amount: orderAmount,
+                totalPrice: price * orderAmount 
+
             })
 
 
         } else {
             if (orderAmount > 0) {
                 orderAmount--;
-                setCart({
-                    [item.menuId]: {
-                        item: item,
-                        amount: orderAmount,
-                        totalPrice: price * orderAmount
-                    }
+              
+                setOrder({
+                    item: item,
+                    amount: orderAmount,
+                    totalPrice: price * orderAmount 
                 })
             }
         }
     }
 
-    const getOrderQty = (menuId) => {
-        let orderItem = orderItems.filter(a => a.menuId == menuId)
+    // const getOrderQty = (menuId) => {
+    //     let orderItem = orderItems.filter(a => a.menuId == menuId)
 
-        if (orderItem.length > 0) {
-            return orderItem[0].qty
-        }
+    //     if (orderItem.length > 0) {
+    //         return orderItem[0].qty
+    //     }
 
-        return 0
-    }
+    //     return 0
+    // }
     console.log('cart id :', item);
+
+    useEffect(() => {
+        setOrder({...initOrder})
+        
+    
+    }, []);
+
     return (
         <View style={styles.container} >
             <View>
@@ -69,7 +83,7 @@ const FoodInfoOrderSc = (props) => {
                 </TouchableOpacity>
 
                 <View style={styles.number} >
-                    <Text style={styles.num}>{cart[item.menuId]?.amount || 0}</Text>
+                    <Text style={styles.num}>{order.amount || 0}</Text>
                 </View>
 
                 <TouchableOpacity activeOpacity={0.7}
@@ -90,7 +104,7 @@ const FoodInfoOrderSc = (props) => {
 
             </View>
             <View>
-                
+
                 <ExtraItems item={item} />
 
             </View>

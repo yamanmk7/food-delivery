@@ -6,10 +6,12 @@ import images from "../constans/images"
 
 const burgerExtras = [
     {
+        
         name: 'Cheese',
         price: 10 , 
     },
     {
+        
         name: 'tomato',
         price : 0 , 
     },
