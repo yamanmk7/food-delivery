@@ -6,25 +6,28 @@ import images from "../constans/images"
 
 const burgerExtras = [
     {
-        
+        id: 1,
         name: 'Cheese',
         price: 10 , 
     },
     {
-        
+        id: 2,
         name: 'tomato',
-        price : 0 , 
+        price : 1 , 
     },
 
     {
+        id: 3,
         name: 'leeuce',
-        price : 0 ,
+        price : 1 ,
     },
     {
+        id: 4,
         name: 'onion',
-        price : 0 ,
+        price : 1 ,
     },
     {
+        id: 5,
         name: 'frice',
         price : 5 ,
     },
@@ -32,27 +35,33 @@ const burgerExtras = [
 
 const pizzaExtras = [
     {
+        id: 1,
         name: 'Cheese',
         price: 10 , 
     },
     {
+        id: 2,
         name: 'tomato',
         price : 1 , 
     },
 
     {
+        id: 3,
         name: 'olive',
         price : 1 ,
     },
     {
+        id: 4,
         name: 'tirse',
         price : 1 ,
     },
     {
+        id: 5,
         name: 'tuna',
         price : 5 ,
     },
     {
+        id: 6,
         name: 'mushroom',
         price : 5 ,
     },
@@ -62,15 +71,18 @@ const pizzaExtras = [
 
 const hotDogExtras = [
     {
+        id: 1,
         name: 'mustard',
         price: 0 , 
     },
     {
+        id: 2,
         name: 'ketchup',
         price : 0 , 
     },
 
     {
+        id: 3,
         name: 'pickle',
         price : 0 ,
     },

@@ -12,29 +12,40 @@ import { useNavigation } from '@react-navigation/native'
 
 const RemderOrderSc = () => {
     const navigation = useNavigation()
-    
 
-    const { cart, setCart , order } = useContext(FoodDelivryContext);
+    const { cart, setCart, order } = useContext(FoodDelivryContext);
     console.log('cart: ', cart);
+
+
     const cartLength = Object.keys(cart).length
 
     const getBasketItemCount = () => {
+
         let itemCount = orderItems.reduce((a, b) => a + (b.qty || 0), 0)
-    
+
         return itemCount
+
     }
 
 
-    
+
+
+
+
+
     const sumOrder = () => {
-        const prices = Object.values(cart).map((item) => item.totalPrice  );
-        console.log("prices: ", prices);
-        var sum = prices.reduce((a, b) => a + b, 0);
+        let sum = 0;
+        cart.forEach(item => {
+            sum += item.totalPrice;
+        })
+
         return sum;
     }
+
     const onOredrPress = () => {
-        setCart(order); 
-        navigation.goBack(); 
+        setCart(order);
+        navigation.goBack();
+        // navigation.navigate('StoreScreen'); 
     }
 
     return (
@@ -52,12 +63,12 @@ const RemderOrderSc = () => {
                     <Image source={icons.mastercard} style={styles.masterCardIcon} />
                     <Text style={styles.cardNum}>4580</Text>
                 </View>
-   
+
             </View>
-            
+
             <View style={styles.buttonOrder}>
                 <TouchableOpacity style={styles.order} onPress={onOredrPress}>
-                    <Text  style={styles.orderText}>{strings.Order}</Text>
+                    <Text style={styles.orderText}>{strings.Order}</Text>
                 </TouchableOpacity>
             </View>
         </View>

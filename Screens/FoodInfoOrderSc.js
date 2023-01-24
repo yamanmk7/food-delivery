@@ -16,7 +16,7 @@ const FoodInfoOrderSc = (props) => {
     const [orderItems, setOrderItems,] = React.useState([])
     const { item } = props;
     
-    const price = item.price.replace(/[^0-9.]+/g, '')
+    const price = parseFloat(item.price.replace(/[^0-9.]+/g, ''))
     
     const initOrder = {
         item: item,
@@ -34,8 +34,7 @@ const FoodInfoOrderSc = (props) => {
             setOrder({
                 item: item,
                 amount: orderAmount,
-                totalPrice: price * orderAmount 
-
+                totalPrice: price * orderAmount + item.extrasPrice
             })
 
 
@@ -65,8 +64,6 @@ const FoodInfoOrderSc = (props) => {
 
     useEffect(() => {
         setOrder({...initOrder})
-        
-    
     }, []);
 
     return (
@@ -105,7 +102,7 @@ const FoodInfoOrderSc = (props) => {
             </View>
             <View>
 
-                <ExtraItems item={item} />
+                <ExtraItems item={item}  />
 
             </View>
 
