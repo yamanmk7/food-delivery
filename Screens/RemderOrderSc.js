@@ -14,7 +14,6 @@ const RemderOrderSc = () => {
     const navigation = useNavigation()
 
     const { cart, setCart, order } = useContext(FoodDelivryContext);
-    console.log('cart: ', cart);
 
 
     const cartLength = Object.keys(cart).length
@@ -44,8 +43,11 @@ const RemderOrderSc = () => {
 
     const onOredrPress = () => {
         setCart(order);
-        navigation.goBack();
-        // navigation.navigate('StoreScreen'); 
+
+        // setTimeout(() => {
+        //     navigation.goBack();
+        // }, 0.8 * 1000 );
+        navigation.navigate('StoreScreen')
     }
 
     return (

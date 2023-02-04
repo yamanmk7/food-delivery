@@ -10,20 +10,23 @@ import CheckBox from '@react-native-community/checkbox';
 import ExtraItems from './ExrasItem'
 
 
+
+
 const FoodInfoOrderSc = (props) => {
-    const { cart, setCart, setOrder, order } = useContext(FoodDelivryContext);
+    const { cart, setCart, setOrder, order ,orderExtras} = useContext(FoodDelivryContext);
 
     const [orderItems, setOrderItems,] = React.useState([])
     const { item } = props;
     
     const price = parseFloat(item.price.replace(/[^0-9.]+/g, ''))
     
+    
     const initOrder = {
         item: item,
         amount: 1,
-        totalPrice: price
+        totalPrice: price,
     }
-
+    
     const editOrder = (action) => {
         let orderAmount = order?.amount || 0;
 
@@ -34,10 +37,10 @@ const FoodInfoOrderSc = (props) => {
             setOrder({
                 item: item,
                 amount: orderAmount,
-                totalPrice: price * orderAmount + item.extrasPrice
+                totalPrice: price * orderAmount 
+                
+                
             })
-
-
         } else {
             if (orderAmount > 0) {
                 orderAmount--;
@@ -45,22 +48,12 @@ const FoodInfoOrderSc = (props) => {
                 setOrder({
                     item: item,
                     amount: orderAmount,
-                    totalPrice: price * orderAmount 
+                    totalPrice: price * orderAmount,
                 })
             }
         }
     }
 
-    // const getOrderQty = (menuId) => {
-    //     let orderItem = orderItems.filter(a => a.menuId == menuId)
-
-    //     if (orderItem.length > 0) {
-    //         return orderItem[0].qty
-    //     }
-
-    //     return 0
-    // }
-    console.log('cart id :', item);
 
     useEffect(() => {
         setOrder({...initOrder})
@@ -78,14 +71,12 @@ const FoodInfoOrderSc = (props) => {
                         <Text style={styles.menuse}>-</Text>
                     </View>
                 </TouchableOpacity>
-
                 <View style={styles.number} >
                     <Text style={styles.num}>{order.amount || 0}</Text>
                 </View>
 
                 <TouchableOpacity activeOpacity={0.7}
-                    onPress={() => editOrder("+")}
-                >
+                    onPress={() => editOrder("+")}>
                     <View style={styles.pluse}>
                         <Text style={styles.pluse1}>+</Text>
                     </View>
@@ -93,27 +84,14 @@ const FoodInfoOrderSc = (props) => {
                 <View style={styles.descriptionContainer} >
                     <Text style={styles.burgerName}>{item.name} {item.price}</Text>
                     <Text style={styles.description}>{item.description}</Text>
-
-
-
                 </View>
-
-
             </View>
             <View>
-
                 <ExtraItems item={item}  />
-
             </View>
-
-
-
         </View>
-
-
     )
 }
-
 const styles = StyleSheet.create({
     container: {
         marginTop: 40,

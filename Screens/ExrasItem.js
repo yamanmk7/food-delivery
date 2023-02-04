@@ -1,40 +1,53 @@
-import react from "react";
 import CheckBox from '@react-native-community/checkbox';
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import React, { useContext } from "react";
+import { StyleSheet, Text, View } from "react-native";
 import SIZES from "../assets/sizes";
-
+import FoodDelivryContext from "../store/FoodDelivryContext";
 
 
 const ExtraItems = (props) => {
-    const { item , price } = props;
+    const { setOrder, order } = useContext(FoodDelivryContext);
+    const { item } = props;
+
+    const addExtraToOrder = (ExtraItem) => {
+        let currentOrder = order;
+        currentOrder.totalPrice = currentOrder.totalPrice + ExtraItem.price;
+        currentOrder.selectedExtras 
+        ? currentOrder.selectedExtras.push(ExtraItem) 
+        : currentOrder.selectedExtras = [ExtraItem];
+        setOrder({ ...currentOrder });
+    }
+
+    console.log("order", order);
+
+    const removeExtraFromOrder = (ExtraItem) => {
+        let currentOrder = order ;
+        
+        currentOrder.totalPrice = currentOrder.totalPrice - ExtraItem.price ;
+        setOrder({ ...currentOrder });
+    }
+
+
+    const onCheckBoxValueChange = (val , ExtraItem) => {
+        val ? addExtraToOrder(ExtraItem) : removeExtraFromOrder(ExtraItem);
+    }
+
     if (!item.Extra) {
         return null;
-    } 
-      // if extra item is selected add price
-    
-
-
- 
-    
-
-     
-    
-
-    return item.Extra.map((item, index) => {
+    }
+    return item.Extra.map((ExtraItem, index) => {
         return (
             <View style={styles.CheckBoxContainer}>
-                <CheckBox style={styles.CheckBox} onValueChange={(val) => {
-                    console.log(val);
-                }}
+                <CheckBox
+                    style={styles.CheckBox}
+                    onValueChange={(val) => onCheckBoxValueChange(val , ExtraItem )}
                     value={false} />
-                <Text style={styles.Extras} key={index}>{item.name} :</Text>
-                <Text style={styles.price}>{item.price }</Text>
+                <Text style={styles.Extras} key={index}>{ExtraItem.name} :</Text>
+                <Text style={styles.price}>{ExtraItem.price}</Text>
             </View>
         )
     })
 }
-
 const styles = StyleSheet.create({
     CheckBoxContainer: {
         flexDirection: 'row',
@@ -43,9 +56,6 @@ const styles = StyleSheet.create({
 
     },
     CheckBox: {
-
-
-
     },
     Extras: {
         fontSize: 16,
@@ -58,10 +68,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginLeft: SIZES.base * 2,
         marginTop: 5,
-
     },
-
-
 })
 
 

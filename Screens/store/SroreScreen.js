@@ -4,12 +4,13 @@ import StoreHeader from "./StoreHeader";
 import StoreInfo from "./StoreInfo";
 
 
-const StoreScreen = (props) => {
-    const { item } = props.route?.params || {};
+const StoreScreen = (props) => { 
+
     return (
         <View>
             <StoreHeader />
-            <StoreInfo menu={item?.menu} />
+            <StoreInfo />
+            
         </View>
     )
 

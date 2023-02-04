@@ -1,42 +1,40 @@
 import React, { useContext } from "react";
 
-import { View,Text ,StyleSheet,Image} from "react-native";
-import { FlatList } from "react-native-gesture-handler";
+import { View,Text ,StyleSheet,Image, FlatList} from "react-native";
 import FoodDelivryContext from "../../store/FoodDelivryContext";
 
 const StoreInfo =(props) =>{
-    const {menu} = props;
+    
   const { cart, setCart , order } = useContext(FoodDelivryContext);
   
   
-  const orderItems = Object.values(order);
-  console.log("orderItems: ", orderItems);
+  const orderItems = Object.values(cart);
+  
   const renderOrder = ({ item }) => {
     return (
       <View style={styles.orderItem}>
         <View style={styles.orderItemContainer}>
           <Image source={item.image} style={styles.image} />
-            
           </View>
       </View>
     );
   };
+  console.log("orderItems1",orderItems);
   return (
-    <View style={styles.container}>
+    <View style={styles.container}>    
       <FlatList
-        data={orderItems}
+        data={cart}
         renderItem={renderOrder}
         keyExtractor={(item) => `${item.id}`}
       />
-     
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#000",
+    flex:1
   },
  
 
