@@ -87,6 +87,7 @@ const FoodInfoOrderSc = (props) => {
                 </View>
             </View>
             <View>
+                {/*  ExtraItems */}
                 <ExtraItems item={item}  />
             </View>
         </View>

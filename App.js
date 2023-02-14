@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Text, I18nManager } from "react-native";
 import Home from "./Screens/HomeScreen/Home";
 import Details from "./src/component/Details";
@@ -18,6 +18,7 @@ import FoodDelivryProvider from "./store/FoodDelivryProvider";
 import StoreScreen from "./Screens/store/SroreScreen";
 import Favorait from "./src/component/Favorait";
 
+
 const Stack = createNativeStackNavigator();
 
 
@@ -25,6 +26,14 @@ const Stack = createNativeStackNavigator();
 
 const App = () => {
   I18nManager.allowRTL(false)
+
+  useEffect(() => {
+    var url = "https://nameless-meadow-25389.herokuapp.com/nazareth";
+     fetch(url)
+         .then((res) => res.json())
+         .then (resJson => console.log("Res from server: " , resJson)) 
+ }, []);
+
   return (
     <FoodDelivryProvider>
       <NavigationContainer>
@@ -44,6 +53,8 @@ const App = () => {
         </Stack.Navigator>
       </NavigationContainer>
     </FoodDelivryProvider>
+
+    
 
 
   )

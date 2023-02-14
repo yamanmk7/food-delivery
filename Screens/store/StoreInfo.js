@@ -19,7 +19,7 @@ const StoreInfo =(props) =>{
       </View>
     );
   };
-  console.log("orderItems1",orderItems);
+  console.log("orderItems",orderItems);
   return (
     <View style={styles.container}>    
       <FlatList

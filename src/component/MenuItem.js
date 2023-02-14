@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import COLORS from "../../assets/Colors";
 import icons from "../../constans/icons";
+import Favorait from "./Favorait";
 
 const MenuItem = (props) => {
     const { item } = props
@@ -21,6 +22,12 @@ const MenuItem = (props) => {
 
     const onOrderPress = () => {
         navigation.navigate('OrderScreen', { item })
+    }
+    const onFavoraitPress = () => {
+        
+      if (favColor== true) {
+         navigation.navigate('Favorait', { item })
+      }
     }
 
     return (
@@ -43,9 +50,9 @@ const MenuItem = (props) => {
 
             </View> 
 
-            <TouchableOpacity onPress={handleColorChange}  >
+            <TouchableOpacity onPress={handleColorChange }  >
 
-                <Image
+                <Image 
                     style={[styles.favoraitIcon, favColor]}
                     source={icons.like}
                 />

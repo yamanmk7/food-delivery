@@ -4,10 +4,13 @@ import { View, Text, StyleSheet, Image, TouchableOpacity, FlatList } from "react
 
 const FavoraitCard = (props) => {
     const { item } = props;
+    const [isFavorait, setIsFavorait] = useState(false);
+
    
 
     return (
        <FlatList  
+
         />
     )
 
