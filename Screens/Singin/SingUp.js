@@ -20,6 +20,7 @@ const SingUp = () => {
                 <TouchableOpacity onPress={()=> navigation.navigate("SingIn")}>
                 <Text style={styles.dontHaveAcc}>Already have an account?</Text>
                 </TouchableOpacity>
+               
             </View>
 
             <View style={styles.input}>

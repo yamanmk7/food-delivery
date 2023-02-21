@@ -8,12 +8,13 @@ const burgerExtras = [
     {
         id: 1,
         name: 'Cheese',
-        price: 10 , 
-    },
+        price: 10 ,   
+    }, 
     {
         id: 2,
         name: 'tomato',
         price : 1 , 
+        
     },
 
     {
@@ -35,33 +36,33 @@ const burgerExtras = [
 
 const pizzaExtras = [
     {
-        id: 1,
+        id: 6,
         name: 'Cheese',
         price: 10 , 
     },
     {
-        id: 2,
+        id: 7,
         name: 'tomato',
         price : 1 , 
     },
 
     {
-        id: 3,
+        id: 8,
         name: 'olive',
         price : 1 ,
     },
     {
-        id: 4,
+        id: 9,
         name: 'tirse',
         price : 1 ,
     },
     {
-        id: 5,
+        id: 10,
         name: 'tuna',
         price : 5 ,
     },
     {
-        id: 6,
+        id: 11,
         name: 'mushroom',
         price : 5 ,
     },
@@ -71,18 +72,18 @@ const pizzaExtras = [
 
 const hotDogExtras = [
     {
-        id: 1,
+        id: 12,
         name: 'mustard',
         price: 0 , 
     },
     {
-        id: 2,
+        id: 13,
         name: 'ketchup',
         price : 0 , 
     },
 
     {
-        id: 3,
+        id: 14,
         name: 'pickle',
         price : 0 ,
     },
