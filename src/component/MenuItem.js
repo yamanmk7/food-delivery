@@ -8,7 +8,7 @@ import Favorait from "./Favorait";
 
 const MenuItem = (props) => {
 
-   
+  
         
     
     const { item } = props

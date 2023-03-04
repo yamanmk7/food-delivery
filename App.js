@@ -17,6 +17,8 @@ import SingUp from "./Screens/Singin/SingUp";
 import FoodDelivryProvider from "./store/FoodDelivryProvider";
 import StoreScreen from "./Screens/store/SroreScreen";
 import Favorait from "./src/component/Favorait";
+import { Provider } from "react-redux";
+
 
 
 const Stack = createNativeStackNavigator();
@@ -35,6 +37,7 @@ const App = () => {
  }, []);
 
   return (
+   
     <FoodDelivryProvider>
       <NavigationContainer>
         <Stack.Navigator>
@@ -53,6 +56,7 @@ const App = () => {
         </Stack.Navigator>
       </NavigationContainer>
     </FoodDelivryProvider>
+   
 
     
 

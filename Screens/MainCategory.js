@@ -11,6 +11,10 @@ import categoryData from '../Screens/categoryData'
 import restaurantData from './RestaurantData'
 import { useNavigation } from '@react-navigation/native'
 import CategoreyItem from '../src/component/CategoreyItem'
+import { TextInput } from 'react-native-gesture-handler'
+
+
+
 
 
 
@@ -22,7 +26,7 @@ export default function MainCategories() {
     const [restaurants, setRestaurants] = useState(restaurantData);
 
 
-
+   
 
     const renderItem = ({ item }) => {
         return (<CategoreyItem
@@ -48,16 +52,19 @@ export default function MainCategories() {
 
     return (
         <View>
+            
             <View style={{ padding: SIZES.padding * 2 }} >
 
                 <Text style={styles.text}>Categories</Text>
-
+              
                 <FlatList {...params.list} />
-
-
+                
             </View>
-
-
+               
+    
+               
+             
+         
         </View>
     )
 
@@ -75,5 +82,24 @@ const styles = StyleSheet.create({
         width: 30,
         height: 30
     },
+    search: {
+        width: 300,
+        height: 40,
+        backgroundColor: 'lightgray',
+        borderRadius: 20,
+        marginTop: 20,
+        marginLeft: 30,
+
+    },
+
+    searchbar: {
+     marginLeft:20,
+        marginTop:10,
+        fontSize:15,
+        fontWeight:'bold'
+
+       
+    },
+      
 
 })
