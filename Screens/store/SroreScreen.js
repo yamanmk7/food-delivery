@@ -11,6 +11,7 @@ const StoreScreen = (props) => {
             <StoreHeader />
             <StoreInfo />
             
+            
         </View>
     )
 
