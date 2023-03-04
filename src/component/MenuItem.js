@@ -1,4 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React, { useState } from "react";
 import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import COLORS from "../../assets/Colors";
@@ -6,6 +7,10 @@ import icons from "../../constans/icons";
 import Favorait from "./Favorait";
 
 const MenuItem = (props) => {
+
+   
+        
+    
     const { item } = props
 
     const navigation = useNavigation();

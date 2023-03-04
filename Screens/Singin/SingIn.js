@@ -1,177 +1,195 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { View,Text, TouchableOpacity,Image, StyleSheet, TextInput } from "react-native";
+import TouchID from "react-native-touch-id";
 import COLORS from "../../assets/Colors";
 import icons from "../../constans/icons";
+
+
 
 
 const SingIn = () => {
     const navigation = useNavigation();
 
+    const authentificate = () => {
+        TouchID.authenticate("to demo this react-native component")
+            .then(success => {
+                alert("Authenticated Successfully");
+            })
+            .catch(error => {
+                alert("Authentication Failed");
+            });
+
+            if (authentificate) {
+                navigation.navigate("UserScreen");
+            } 
+
+            
+    };
+
      return (
-            <View style={styles.container}>
-                <Text style={styles.text}>Sing In</Text>
-                <View style={styles.discribtio}>
-                    <Text style={styles.newAcc}>Welcome Back</Text>
-                    <Text style={styles.text1}>Enter your Email and Password </Text>
-                    <Text style={styles.text1}>for SingIn</Text>
-                    <TouchableOpacity onPress={() => navigation.navigate("SingUp")}>
-                    <Text style={styles.text2}>Don't have an account?</Text>
-                    </TouchableOpacity>
-                </View>
+           <View style={styles.Container} >
+            <View style={styles.header}>
+               <Text style={styles.SingInHeader}> Sing in </Text>
+            </View>
+            <View style={styles.welcome}>
+                <Text style={styles.welcomeText}>Welcome  to  xxxxx</Text>
 
-                <View style={styles.info}>
-                    <View style={styles.textInput}>
-                        <Image source={icons.user} style={styles.usericon} />
-                    <TextInput style={styles.input1} placeholder="Email Adress" />
+            </View>
+            <View style={styles.input}>
+                <TextInput style={styles.inputText} placeholder="Enter your phone number " />
 
-                    </View>
+            </View>
+            <View style={styles.input}>
+                <TextInput style={styles.inputText} placeholder="Enter your password" />
 
-                    <View style={styles.textInput}>
-                        <Image source={icons.user} style={styles.usericon} />
-                    <TextInput style={styles.input1} placeholder="Password" />
+            </View>
+            <TouchableOpacity style={styles.SingIn} onPress={() => navigation.navigate("UserScreen")}>
+                <Text style={styles.SingInText}> Sing in </Text>
+            </TouchableOpacity>
 
-                    </View>
-                    <TouchableOpacity>
-                    <Text style={styles.forgotPass}>Forgot Password?</Text>
-                    </TouchableOpacity>
-                </View>
+            <TouchableOpacity style={styles.faceid} onPress={ authentificate}>
+                <Text style={styles. faceidText}> Face Id  </Text>
+            </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.button1} onPress={()=> navigation.navigate("UserScreen")}>
-                        <Text style={styles.singin}>Sing In</Text>
-                    </TouchableOpacity>
-                  
-                </View>
+           <View>
+                <Text style={styles.singup}>Don't have an account? 
+                <TouchableOpacity onPress={() => navigation.navigate("SingUp")}>
+                <Text style={{color: COLORS.primary}}>Sing up</Text></TouchableOpacity>
+                </Text>
+           </View>
+           <TouchableOpacity>
+           <View>
+                <Text style={styles.changePass}>Forgot password? </Text>
+           </View>
+           </TouchableOpacity>
+
+           <View>
+            <Text style={styles.foormFooter}>
+            By cliking on "Sing in" you agree to <Text style={{color:COLORS.primary}}>xxxxx</Text> terms and conditions
+            and privacy policy
+            
+
+
+            </Text>
+           </View>
+          
+           </View>
 
      )
 }
 
 const styles = StyleSheet.create({
-    container: {
+    Container: {
         flex: 1,
-        marginTop: 50,
-    },
-    text: {
-        fontSize: 30,
-        fontWeight: "bold",
-        alignSelf: "center",
-
-    },
-    discribtio: {
-        marginLeft: 10,
-
-    },
-    newAcc: {
-        fontSize: 30,
-        fontWeight: "bold",
-        marginTop: 20,
-    },
-    text1: {
-        fontSize: 15,
-        fontWeight: "bold",
-        marginTop: 10,
-
-    },
-    text2: {
-        fontSize: 15,
-        fontWeight: "bold",
-        marginTop: -17,
-        color: COLORS.primary,
-        marginLeft: 80,
-
-    },
-    info: {
-        marginTop: 20,
-       backgroundColor: COLORS.white,
-       height: 400,
-         width: "80%",
-            alignSelf: "center",
-            borderRadius: 20,
-            elevation: 10,
-            shadowColor: COLORS.black,
-            shadowOffset: {
-                width: 0,
-                height: 2,
-            },
-            shadowOpacity: 0.25,
-            shadowRadius: 3.84,
-            padding: 10,
-            paddingLeft: 40,
+        backgroundColor: COLORS.lightGray3,
 
 
     },
-    textInput: {
+    header: {
+        backgroundColor: COLORS.black,
+        height: 50,
+        width: 200,
+        borderRadius: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
         marginTop: 40,
-        width: "90%",
+        marginLeft: 110,
+    },
+    SingInHeader: {
+        color: COLORS.primary,
+        fontSize: 20,
+        fontWeight: 'bold',
+
+
+    },
+    welcome: {
+       marginTop: 50,
+       
+    },
+    welcomeText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginTop: 50,
+        marginLeft: 100,
+
+    },
+    input: {
+        backgroundColor: COLORS.white,
         height: 50,
-        backgroundColor: COLORS.lightGray4,
+        width: 390,
         borderRadius: 10,
-        justifyContent: "center",
-        alignSelf: "center",
-        elevation: 10,
-        shadowColor: COLORS.black,
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        padding: 10,
-        paddingLeft: 10,
-        marginLeft: -20,
-
-
-    },
-    input1: {
-        fontSize: 15,
-        paddingLeft: 50,
-
-
-    },
-    usericon: {
-        height: 20,
-        width: 20,
-        tintColor: COLORS.primary,
-        position: "absolute",
-        marginTop: 15,
+       
+        marginTop: 50,
         marginLeft: 10,
 
     },
-    forgotPass: {
-        fontSize: 12,
-        fontWeight: "bold",
-        color: COLORS.primary,
+    inputText: {
+        fontSize: 15,
+       
+        marginLeft: 20,
         marginTop: 10,
-        marginLeft: 140,
+
+        
 
     },
-    button1: {
-        backgroundColor: COLORS.primary,
+    SingIn: {
+        backgroundColor: COLORS.black,
         height: 50,
-        width: "50%",
+        width: 390,
         borderRadius: 10,
-        alignSelf: "center",
-        marginTop: 20,
-        justifyContent: "center",
-        alignItems: "center",
-        elevation: 10,
-        shadowColor: COLORS.black,
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 70,
+        marginLeft: 10,
+
     },
-    singin: {
+    SingInText: {
+        color: COLORS.primary,
         fontSize: 20,
-        fontWeight: "bold",
-        color: COLORS.white,
+        fontWeight: 'bold',
+    },
+    faceid: {
+        borderColor: COLORS.primary,
+        borderWidth: 2,
+        height: 50,
+        width: 390,
+        borderRadius: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 20,
+        marginLeft: 10,
+       
+    },
+    faceidText: {
+        color: COLORS.primary,
+        fontSize: 20,
+        fontWeight: 'bold',
+
+    },
+    singup: {
+        fontSize: 15,
+        marginTop: 20,
+        marginLeft: 100,
+        
+    },
+    changePass: {
+        fontSize: 15,
+        marginTop: 20,
+        marginLeft: 150,
+    },
+    foormFooter: {
+       marginTop: 90,
+       fontSize: 14,
+       fontWeight: '400',
+       lineHeight: 20,
+       color: '#929292',
+       textAlign: 'center',
+        
     },
     
 
-     
-
+   
 
 })
 

@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
-import { View, Text, StyleSheet,Image, Touchable, TouchableOpacity, Modal} from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import icons from "../../constans/icons";
-import { TextInput } from "react-native-gesture-handler";
-import { useState } from "react";
-import ActionSheet from "react-native-actions-sheet";
+// import React, { useRef } from "react";
+// import { View, Text, StyleSheet,Image, Touchable, TouchableOpacity, Modal} from "react-native";
+// import { useNavigation } from "@react-navigation/native";
+// import icons from "../../constans/icons";
+// import { TextInput } from "react-native-gesture-handler";
+// import { useState } from "react";
+// import ActionSheet from "react-native-actions-sheet";
  
 
 // const BottomPopUp = () => {

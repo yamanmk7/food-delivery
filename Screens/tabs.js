@@ -8,6 +8,7 @@ import SingUp from "./Singin/SingUp";
 import BottomPopUp from "./popup/BottomPopUp";
 import Favorait from "../src/component/Favorait";
 import Search from "../src/component/Search";
+import SingIn from "./Singin/SingIn";
 
 
 
@@ -48,7 +49,7 @@ const Tabs = () => {
 
 
 
-            <Tab.Screen  name="User" component={BottomPopUp} options={{ headerShown:false,
+            <Tab.Screen  name="User" component={SingIn} options={{ headerShown:false,
                 tabBarIcon: ({focused}) => (
                     <Image   source={icons.user} resizeMode='contain' style={{ width:30,
                         height:30, 
