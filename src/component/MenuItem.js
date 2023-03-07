@@ -5,10 +5,12 @@ import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from
 import COLORS from "../../assets/Colors";
 import icons from "../../constans/icons";
 import Favorait from "./Favorait";
+import { AsyncStorage } from 'react-native';
+
 
 const MenuItem = (props) => {
 
-  
+
         
     
     const { item } = props

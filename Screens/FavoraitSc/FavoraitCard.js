@@ -1,23 +1,38 @@
 import react, { useState } from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity, FlatList } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity, FlatList ,Button} from "react-native";
+import { useEffect } from "react";
 
 
-const FavoraitCard = (props) => {
-    const { item } = props;
-    const [isFavorait, setIsFavorait] = useState(false);
+import { AsyncStorage } from 'react-native';
 
-   
+const FavoraitCard = ({ item }) => {
+  const [isFavorite, setIsFavorite] = useState(false);
 
-    return (
-       <FlatList  
+  useEffect(() => {
+    // Check if the item is already a favorite
+    AsyncStorage.getItem('favorites').then((data) => {
+      const favorites = JSON.parse(data);
+      if (favorites) {
+        const index = favorites.findIndex((fav) => fav.id === item.id);
+        if (index > -1) {
+          setIsFavorite(true);
+        }
+      }
+    });
+  }, []);
 
-        />
-    )
+  const handleToggleFavorite = () => {
+    setIsFavorite(!isFavorite);
+    toggleFavorite(item);
+  };
 
-}
+  return (
+    <View>
+      <Text></Text>
+      <Button title={isFavorite ? 'Remove from favorites' : 'Add to favorites'} onPress={handleToggleFavorite} />
+    </View>
+  );
+};
 
-const styles = StyleSheet.create({
-
-})
 
 export default FavoraitCard;

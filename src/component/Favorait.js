@@ -14,7 +14,7 @@ const Favorait = (props) => {
     return (
         <View>
             <FavoraitHeader />
-            <MenuItem  />
+            {/* <FavoraitCard /> */}
            
         </View>
     )

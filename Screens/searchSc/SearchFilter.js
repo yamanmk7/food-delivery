@@ -33,11 +33,15 @@ const SearchFilter = () => {
         value={searchText}
       />
     </View>
-      <FlatList
+    <View style={styles.list}>
+    <FlatList
         data={filteredData}
         renderItem={renderItem}
         keyExtractor={(item) => item.id.toString()}
+        
       />
+    </View>
+     
     </View>
   );
 };
@@ -67,6 +71,12 @@ const styles = StyleSheet.create({
             marginTop: 10,
             
 
+    },
+    list: {
+        marginTop: 20,
+        marginLeft: 20,
+       
+      
     },
 
 });
