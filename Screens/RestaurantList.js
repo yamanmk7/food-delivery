@@ -10,7 +10,7 @@ const RestaurantList = ({ props }) => {
 
   const {setHomePageCategory , homePageCategory} = useContext(FoodDelivryContext) ; 
 
-  // const [restaurants, setRestaurants] = useState(restaurantData);
+  
 
   const renderRestuarants = () => {
       if(!homePageCategory){

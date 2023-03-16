@@ -19,9 +19,9 @@ const OrderScreen = (props) => {
   return (
     <View style={{flex:1}}> 
       <HeaderOrderScreen />
-      <ScrollView style={{flex:1}}>
+     
         <FoodInfoOrderSc item={item} />
-      </ScrollView>
+    
       <RemderOrderSc />
     </View>
 

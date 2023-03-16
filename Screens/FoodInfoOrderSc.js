@@ -8,6 +8,7 @@ import restaurantData from './RestaurantData'
 import FoodDelivryContext from '../store/FoodDelivryContext'
 import CheckBox from '@react-native-community/checkbox';
 import ExtraItems from './ExrasItem'
+import { ScrollView } from 'react-native-gesture-handler'
 
 
 
@@ -86,10 +87,13 @@ const FoodInfoOrderSc = (props) => {
                     <Text style={styles.description}>{item.description}</Text>
                 </View>
             </View>
-            <View>
+            <ScrollView style={{paddingBottom:10,paddingTop:5}}>
+            <View  >
                 {/*  ExtraItems */}
                 <ExtraItems item={item}  />
             </View>
+            </ScrollView>
+            
         </View>
     )
 }

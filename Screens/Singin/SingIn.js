@@ -27,6 +27,15 @@ const SingIn = () => {
             
     };
 
+    const onOredrPress = () => {
+       
+
+        setTimeout(() => {
+            navigation.goBack();
+        }, 0.9 * 1000 );
+
+    }
+
      return (
            <View style={styles.Container} >
             <View style={styles.header}>
@@ -48,7 +57,7 @@ const SingIn = () => {
                 <Text style={styles.SingInText}> Sing in </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.faceid} onPress={ authentificate}>
+            <TouchableOpacity style={styles.faceid} onPress={ onOredrPress && authentificate}>
                 <Text style={styles. faceidText}> Face Id  </Text>
             </TouchableOpacity>
 

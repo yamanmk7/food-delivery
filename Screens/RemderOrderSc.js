@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import SIZES from '../assets/sizes'
 import COLORS from '../assets/Colors'
 
@@ -9,8 +9,8 @@ import FoodDelivryContext from '../store/FoodDelivryContext'
 import ExtraItems from './ExrasItem'
 import { useNavigation } from '@react-navigation/native'
 
-
 const RemderOrderSc = () => {
+
     const navigation = useNavigation()
 
     const { cart, setCart, order } = useContext(FoodDelivryContext);
@@ -27,8 +27,40 @@ const RemderOrderSc = () => {
     }
 
 
+   // add to cart
 
+    // const [cartItems, setCartItems] = useState([]);
 
+    // const addToCart = (product) => {
+    //     const existingItemIndex = cartItems.findIndex(item => item.id === product.id);
+    //     if (existingItemIndex !== -1) {
+    //       const updatedCartItems = [...cartItems];
+    //       updatedCartItems[existingItemIndex].quantity += 1;
+    //       setCartItems(updatedCartItems);
+    //     } else {
+    //       setCartItems([...cartItems, { ...product, quantity: 1 }]);
+    //     }
+    //   }
+     
+    const Cart = ({ items }) => {
+        return (
+          <View>
+            <Text>Cart:</Text>
+            {items.map(item => ( 
+              <Text key={item.id}>{item.name}</Text>
+            ))}
+          </View>
+        );
+      };     
+      const Product = ({ item, onAddToCart }) => {
+        return (
+          <View>
+            <Text>{item.name}</Text>
+            <Button title="Add to Cart" onPress={() => onAddToCart(item)} />
+          </View>
+        );
+      }; 
+    
 
 
 
@@ -44,11 +76,12 @@ const RemderOrderSc = () => {
     const onOredrPress = () => {
         setCart(order);
 
-        // setTimeout(() => {
-        //     navigation.goBack();
-        // }, 0.8 * 1000 );
-        navigation.navigate('StoreScreen')
+        setTimeout(() => {
+            navigation.goBack();
+        }, 0.8 * 1000 );
     }
+
+    console.log("cart: " , cart);
 
     return (
         <View style={styles.Container}>

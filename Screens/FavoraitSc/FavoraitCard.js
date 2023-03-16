@@ -1,38 +1,45 @@
-import react, { useState } from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity, FlatList ,Button} from "react-native";
-import { useEffect } from "react";
+// import React,{useContext} from 'react';
+// import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+// import FoodDelivryContext from '../../store/FoodDelivryContext';
+// import MenuItem from '../../src/component/MenuItem';
 
 
-import { AsyncStorage } from 'react-native';
-
-const FavoraitCard = ({ item }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
-
-  useEffect(() => {
-    // Check if the item is already a favorite
-    AsyncStorage.getItem('favorites').then((data) => {
-      const favorites = JSON.parse(data);
-      if (favorites) {
-        const index = favorites.findIndex((fav) => fav.id === item.id);
-        if (index > -1) {
-          setIsFavorite(true);
-        }
-      }
-    });
-  }, []);
-
-  const handleToggleFavorite = () => {
-    setIsFavorite(!isFavorite);
-    toggleFavorite(item);
-  };
-
-  return (
-    <View>
-      <Text></Text>
-      <Button title={isFavorite ? 'Remove from favorites' : 'Add to favorites'} onPress={handleToggleFavorite} />
-    </View>
-  );
-};
 
 
-export default FavoraitCard;
+// const FavoriteCard = (props) => {
+
+//   const { userId, ServId,fileId , userFavorates , fId} = useContext(FoodDelivryContext);
+
+//   const query = () => {
+//     const filterdFav = userFavorates.filter(favService => {
+//         return favService.favoListFileId 
+       
+//     })
+
+//     const faveArr = filterdFav.map(fav => servicesData.find(ser => ser.MenuItem=== fav.favoListServiceId))
+//        return faveArr ;
+//   }
+
+//        const renderCard = () => {
+//         const data = query();
+//         const cardsArray = data.map(card => {
+//             return card ? <MenuItem  {...card} /> : null;
+//         });
+//         return cardsArray;
+//     }
+  
+
+
+
+//   return(
+//     <View>
+//       {renderCard()}
+//     </View>
+//   )
+//   }
+
+
+
+
+
+// export default FavoriteCard;

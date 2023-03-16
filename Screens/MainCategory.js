@@ -12,6 +12,9 @@ import restaurantData from './RestaurantData'
 import { useNavigation } from '@react-navigation/native'
 import CategoreyItem from '../src/component/CategoreyItem'
 import { TextInput } from 'react-native-gesture-handler'
+import { SelectList } from 'react-native-dropdown-select-list'
+
+
 
 
 
@@ -24,8 +27,21 @@ export default function MainCategories() {
     const [categories, setCategories] = useState(categoryData)
     const [selectedCategory, setSelectedCategory] = useState(null)
     const [restaurants, setRestaurants] = useState(restaurantData);
+    
+    const [selected, setSelected] = React.useState([]);
 
+   
 
+    const data = [
+        {id:'1', value:'HotDogs'},
+        {id:'2', value:'Salad'},
+        {id:'3', value:'Burgers'},
+        {id:'4', value:'Pizza'},
+        {id:'5', value:'Snacks'},
+        {id:'6', value:'Diary Drinks'},
+        
+
+    ]
    
 
     const renderItem = ({ item }) => {
@@ -34,6 +50,7 @@ export default function MainCategories() {
             item={item}
             selectedCategory={selectedCategory}
         />
+        
         )
     }
 
@@ -58,9 +75,17 @@ export default function MainCategories() {
                 <Text style={styles.text}>Categories</Text>
               
                 <FlatList {...params.list} />
-                
+                <SelectList 
+      onSelect={() => alert(selected)}
+      setSelected={setSelected} 
+      
+      data={data}  
+      search={true} 
+      boxStyles={{borderRadius:1}} 
+    />  
             </View>
-               
+
+              
     
                
              

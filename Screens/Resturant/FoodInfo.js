@@ -1,10 +1,10 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity, StyleSheet, SafeAreaView, Animated } from "react-native";
+import { View, Text, Image, TouchableOpacity, StyleSheet, SafeAreaView, Animated, ScrollView } from "react-native";
 import icons from "../../constans/icons";
 import SIZES from "../../assets/sizes";
 import images from "../../constans/images";
 import restaurantData from "../RestaurantData";
-import { FlatList, ScrollView } from "react-native-gesture-handler";
+
 import COLORS from "../../assets/Colors";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";

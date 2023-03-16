@@ -54,19 +54,15 @@ const RestaurantCard = (props) => {
                             <View style={styles.catagoryContainer}
                                 key={categoryId} >
                                 <Text style={styles.catagory} >{getCategoryNameById(categoryId)}</Text>
-                                <Text style={styles.catagory} >.</Text>
+                                
                             </View>
                         )
 
                     }
                     )}
 
-                    {/* Price */}
-                    {[1, 2, 3].map((priceRating) => (
-                        <Text key={priceRating} style={styles.priceRating} >$</Text>
-                    ))
-
-                    }
+                  
+              
                 </View>
             </View>
         </TouchableOpacity>
@@ -101,7 +97,7 @@ const styles = StyleSheet.create({
     },
     timeText: {
         color: COLORS.black,
-        fontSize: SIZES.h3,
+        fontSize: SIZES.h4,
         fontWeight: 'bold',
 
     },

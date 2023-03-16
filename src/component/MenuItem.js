@@ -10,7 +10,14 @@ import { AsyncStorage } from 'react-native';
 
 const MenuItem = (props) => {
 
+    const [favorites, setFavorites] = useState([]);
 
+    const addToFavorites = (item) => {
+        setFavorites([...favorites, item]);
+      }
+      
+      
+    
         
     
     const { item } = props
@@ -30,14 +37,10 @@ const MenuItem = (props) => {
     const onOrderPress = () => {
         navigation.navigate('OrderScreen', { item })
     }
-    const onFavoraitPress = () => {
-        
-      if (favColor== true) {
-         navigation.navigate('Favorait', { item })
-      }
-    }
+   
 
     return (
+        
         <View style={styles.foodCard}>
             <View style={{ flexDirection: 'row', flex: 1 }}>
                 <View style={{ flex: 1 }} >
@@ -55,16 +58,22 @@ const MenuItem = (props) => {
                     <Text style={styles.priceText}>Price: {item.price}</Text>
                 </View>
 
+                
+               
+
             </View> 
 
-            <TouchableOpacity onPress={handleColorChange }  >
+            <TouchableOpacity onPress={{handleColorChange, addToFavorites} }  >
 
                 <Image 
                     style={[styles.favoraitIcon, favColor]}
                     source={icons.like}
                 />
             </TouchableOpacity>
+
+
         </View >
+     
     )
 }
 
@@ -113,7 +122,6 @@ const styles = StyleSheet.create({
         // bottom: 10,
         backgroundColor: COLORS.white,
         padding: 5,
-        borderBottomLeftRadius: 10,
         borderTopRightRadius: 10,
         alignItems: 'center',
         justifyContent: 'center',

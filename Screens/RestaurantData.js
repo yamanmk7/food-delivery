@@ -132,7 +132,7 @@ const restaurantData = [
         menu: [
             {
                 menuId: 1,
-                name: "Crispy Chicken Burger",
+                name: " Clasic Burger",
                 photo: images.crispyChickenBurger,
                 description: "Burger with crispy chicken, cheese and lettuce",
                 calories: 200,
@@ -141,7 +141,7 @@ const restaurantData = [
             },
             {
                 menuId: 2,
-                name: "Crispy Chicken Burger with Honey Mustard",
+                name: "Chicken Burger ",
                 photo: images.honeyMustardChickenBurger,
                 description: "Crispy Chicken Burger with Honey Mustard Coleslaw",
                 calories: 250,
@@ -158,9 +158,9 @@ const restaurantData = [
             // },
             {
                 menuId: 4,
-                name: "xxxxxx",
+                name: "Cheese Burger",
                 photo: images.burgerRestaurant1,
-                description: "xxxxxxx",
+                description: "",
                 calories: 200,
                 price: "$8",
                 Extra: burgerExtras , 

@@ -15,21 +15,27 @@ import { useNavigation } from '@react-navigation/native'
     const navigation = useNavigation()
 
     const initialCurrentLocation = {
-        streetName: " Location",
+        streetName: " Haifa  ",  
         gps: {
             latitude: 1.5496614931250685,
             longitude: 110.36381866919922
         }
     }
     const [currentLocation, setCurrentLocation] = useState(initialCurrentLocation)
-
+      
+    
+  
     /////////////////////////////////////////
   return (
     <View  style={{flexDirection:'row', height:50}} >
-        <TouchableOpacity style={styles.Container}>
-            <Image source={icons.nearby} style={styles.nearby} resizeMode="contain" />
-
+         <TouchableOpacity>
+        <Image source={icons.list} style={styles.listIcon} resizeMode="contain" />
         </TouchableOpacity>
+        <TouchableOpacity style={styles.Container}   onPress={() => navigation.navigate("GoogleMap")} >
+            <Image source={icons.nearby} style={styles.nearby} resizeMode="contain" />
+        </TouchableOpacity> 
+
+       
 
         <View style={styles.Location}>
             <View style={styles.LocationContainer}>
@@ -80,6 +86,8 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center',
         borderRadius:SIZES.radius,
+        marginLeft:-20,
+        marginTop:10,
 
     },
 
@@ -97,6 +105,14 @@ const styles = StyleSheet.create({
         width:40,
         marginTop:10,
         marginRight:SIZES.padding*2,
+
+    },
+    
+    listIcon: {
+        height:35,
+        width:35,
+        marginTop:17,
+        marginLeft:SIZES.padding*2,
 
     },
 

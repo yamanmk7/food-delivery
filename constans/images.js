@@ -17,7 +17,6 @@ const images = {
     kekLapisShop: require('../assets/images/kek-lapis-shop.jpg'),
     kekLapis: require('../assets/images/kek-lapis.jpg'),
     nasiBriyaniMutton: require('../assets/images/nasi-briyani-mutton.jpg'),
-   
     nasiLemak: require('../assets/images/nasi-lemak.jpg'),
     noodleShop: require('../assets/images/noodle-shop.jpg'),
     pizzaRestaurant: require('../assets/images/pizza-restaurant.jpg'),

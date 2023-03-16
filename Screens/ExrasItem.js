@@ -16,6 +16,7 @@ const ExtraItems = (props) => {
         ? currentOrder.selectedExtras.push(ExtraItem) 
         : currentOrder.selectedExtras = [ExtraItem];
         setOrder({ ...currentOrder });
+        
     }
 
     console.log("order", order);
@@ -38,10 +39,11 @@ const ExtraItems = (props) => {
     return item.Extra.map((ExtraItem, index) => {
         return (
             <View style={styles.CheckBoxContainer}>
-                <CheckBox
+                <CheckBox 
                     style={styles.CheckBox}
                     onValueChange={(val) => onCheckBoxValueChange(val , ExtraItem )}
-                    value={false} />
+                    value={false} 
+                    />
                 <Text style={styles.Extras} key={index}>{ExtraItem.name} :</Text>
                 <Text style={styles.price}>{ExtraItem.price}</Text>
             </View>
@@ -56,18 +58,21 @@ const styles = StyleSheet.create({
 
     },
     CheckBox: {
+        width: 15,
+        height:20, 
+        marginTop:3 , 
     },
     Extras: {
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: 'bold',
         marginLeft: 10,
-        marginTop: 5,
+        marginTop: 3,
     },
     price: {
         fontSize: 16,
         fontWeight: 'bold',
-        marginLeft: SIZES.base * 2,
-        marginTop: 5,
+        marginLeft: SIZES.base * 1,
+        marginTop: 3,
     },
 })
 
