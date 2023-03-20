@@ -31,7 +31,7 @@ const Order = (props) => {
 
                             <Text style={styles.priceText}>{`Price: ${item.price}`} </Text>
                             <View>
-                                <Text style={styles.amount} > amount :  - 1  +</Text>
+                                <Text style={styles.amount} > amount :  - 5  +</Text>
                             </View>
                         </View>
 
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: 'bold',
         marginTop: 20,
-        marginLeft: -25,
+        marginLeft: 15,
 
     },
 
@@ -106,13 +106,13 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: 'bold',
         marginTop: 20,
-        marginLeft: -25,
+        marginLeft: 15,
     },
     amount: {
         fontSize: 15,
         fontWeight: 'bold',
         marginTop: 20,
-        marginLeft: -25,
+        marginLeft: 15,
 
     },
 

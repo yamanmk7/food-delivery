@@ -1,22 +1,28 @@
 import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import COLORS from "../../assets/Colors";
 import icons from "../../constans/icons";
 import Favorait from "./Favorait";
 import { AsyncStorage } from 'react-native';
+import FoodDelivryContext from "../../store/FoodDelivryContext";
 
 
 const MenuItem = (props) => {
+    const { cart, setCart, order } = useContext(FoodDelivryContext);
 
     const [favorites, setFavorites] = useState([]);
-
+    
     const addToFavorites = (item) => {
         setFavorites([...favorites, item]);
       }
       
-      
+      const onFavoritePress = () => {
+        // setFavorit(favorait),
+        setCart(order);
+        handleColorChange()
+      }
     
         
     
@@ -63,7 +69,9 @@ const MenuItem = (props) => {
 
             </View> 
 
-            <TouchableOpacity onPress={{handleColorChange, addToFavorites} }  >
+            <TouchableOpacity
+              onPress={onFavoritePress }>
+         
 
                 <Image 
                     style={[styles.favoraitIcon, favColor]}

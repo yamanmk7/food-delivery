@@ -9,8 +9,6 @@ import { useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 
 
-
-
  export default function Header  ()  {
     const navigation = useNavigation()
 
@@ -24,7 +22,7 @@ import { useNavigation } from '@react-navigation/native'
     const [currentLocation, setCurrentLocation] = useState(initialCurrentLocation)
       
     
-  
+
     /////////////////////////////////////////
   return (
     <View  style={{flexDirection:'row', height:50}} >
@@ -35,24 +33,18 @@ import { useNavigation } from '@react-navigation/native'
             <Image source={icons.nearby} style={styles.nearby} resizeMode="contain" />
         </TouchableOpacity> 
 
-       
-
         <View style={styles.Location}>
             <View style={styles.LocationContainer}>
-       <Text style={styles.textLocation}>{currentLocation.streetName}</Text>
+       <Text style={styles.textLocation}>{currentLocation.streetName}</Text> 
        </View>
         </View>
 
         <TouchableOpacity style={styles.bascketContainer} 
-        onPress={() => navigation.navigate("StoreScreen")}
-        >
+        onPress={() => navigation.navigate("StoreScreen")} >
             <Image source={icons.basket} style={styles.basket} resizeMode="contain" />
 
-        </TouchableOpacity>
-        
-
-         
-    </View>
+        </TouchableOpacity>   
+   </View>
   )
 }
 

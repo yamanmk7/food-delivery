@@ -9,12 +9,12 @@ import MenuItem from "./MenuItem";
 const Favorait = (props) => {
     const FavoraitFood =  useContext(FoodDelivryContext);
    
-
+    const { item } = props.route.params || {};
      
     return (
         <View>
             <FavoraitHeader />
-        {/* <FavoraitCard /> */}
+        <FavoraitCard item={item} />
            
         </View>
     )

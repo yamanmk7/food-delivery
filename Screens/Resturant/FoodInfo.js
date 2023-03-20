@@ -18,6 +18,7 @@ const FoodInfo = (props) => {
     const { menu } = props;
     const navigation = useNavigation()
    
+    
 
     // console.log('item: ', props);
 

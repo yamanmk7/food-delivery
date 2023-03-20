@@ -7,6 +7,7 @@ const FoodDelivryProvider = props => {
   const [cart, setCart] = useState([]);
   const [order, setOrder] = useState({});
   const [orderExtras, setOrderExtras] = useState(0);
+  const [favorait , setFavorait] = useState([])
 
   const setorderItems = (item) => {
     const itemMenuId = Object.keys(item)[0]
@@ -40,6 +41,8 @@ const FoodDelivryProvider = props => {
         setOrder,
         orderExtras,
         setOrderExtras,
+        setFavorait,
+        favorait,
       }}>
       {props.children}
     </FoodDelivryContext.Provider>
