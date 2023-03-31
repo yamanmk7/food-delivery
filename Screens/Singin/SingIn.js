@@ -42,25 +42,29 @@ const SingIn = () => {
                <Text style={styles.SingInHeader}> Sing in </Text>
             </View>
             <View style={styles.welcome}>
-                <Text style={styles.welcomeText}>Welcome  to  xxxxx</Text>
+                <Text style={styles.welcomeText}>Welcome  to  FoodDelivery</Text>
 
             </View>
             <View style={styles.input}>
-                <TextInput style={styles.inputText} placeholder="Enter your phone number " />
+                <TextInput style={styles.inputText} placeholder="Enter your phone number "
+                placeholderTextColor={COLORS.black}  />
 
             </View>
             <View style={styles.input}>
-                <TextInput style={styles.inputText} placeholder="Enter your password" />
+                <TextInput style={styles.inputText} placeholder="Enter your password"
+                placeholderTextColor={COLORS.black} />
 
             </View>
+
             <TouchableOpacity style={styles.SingIn} onPress={() => navigation.navigate("UserScreen")}>
                 <Text style={styles.SingInText}> Sing in </Text>
             </TouchableOpacity>
 
+
             <TouchableOpacity style={styles.faceid} onPress={ onOredrPress && authentificate}>
                 <Text style={styles. faceidText}> Face Id  </Text>
             </TouchableOpacity>
-
+   
            <View>
                 <Text style={styles.singup}>Don't have an account? 
                 <TouchableOpacity onPress={() => navigation.navigate("SingUp")}>
@@ -68,14 +72,14 @@ const SingIn = () => {
                 </Text>
            </View>
            <TouchableOpacity>
-           <View>
+           <View> 
                 <Text style={styles.changePass}>Forgot password? </Text>
            </View>
            </TouchableOpacity>
 
            <View>
             <Text style={styles.foormFooter}>
-            By cliking on "Sing in" you agree to <Text style={{color:COLORS.primary}}>xxxxx</Text> terms and conditions
+            By cliking on "Sing in" you agree to <Text style={{color:COLORS.primary}}>FoodDelivery</Text> terms and conditions
             and privacy policy
             
 
@@ -120,7 +124,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         marginTop: 50,
-        marginLeft: 100,
+        marginLeft: 80,
 
     },
     input: {
@@ -135,7 +139,7 @@ const styles = StyleSheet.create({
     },
     inputText: {
         fontSize: 15,
-       
+        padding:5,
         marginLeft: 20,
         marginTop: 10,
 

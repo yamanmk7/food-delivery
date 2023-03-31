@@ -5,20 +5,18 @@ import FavoraitCard from "../../Screens/FavoraitSc/FavoraitCard";
 import FoodDelivryContext from "../../store/FoodDelivryContext";
 import restaurantData from "../../Screens/RestaurantData";
 import MenuItem from "./MenuItem";
-
 const Favorait = (props) => {
+
     const FavoraitFood =  useContext(FoodDelivryContext);
-   
-    const { item } = props.route.params || {};
-     
+
+    const { item } = props.route.params || {};  
+    
     return (
         <View>
             <FavoraitHeader />
-        <FavoraitCard item={item} />
-           
+        <FavoraitCard item={item} />   
         </View>
     )
-}
-
+} 
 
 export default Favorait;
