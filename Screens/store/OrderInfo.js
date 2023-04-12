@@ -4,16 +4,13 @@ import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import COLORS from '../../assets/Colors';
 import icons from '../../constans/icons';
 import images from '../../constans/images';
+
 const Order = (props) => {
     const { order } = props;
     const {item} = order;
-
-    console.log(order);
-
-    return (
-        
+    console.log(order); 
+    return (  
         <View style={styles.Container}>
-          
             <TouchableOpacity >
                 <View style={styles.foodCard}>
                     <View style={{ flexDirection: 'row', flex: 1 }}>
@@ -34,19 +31,10 @@ const Order = (props) => {
                                 <Text style={styles.amount} > amount :  - 5  +</Text>
                             </View>
                         </View>
-
-
-
-
                     </View>
-
                 </View>
             </TouchableOpacity>
-            
         </View>
-        
-
-
     );
 };
 

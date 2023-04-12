@@ -17,6 +17,7 @@ const FavoriteCard = (props) => {
                         <View style={styles.caloriesContainer}>
                             <Text style={styles.caloriesText}>{icons.calories}</Text>
                             <Image style={styles.caloriesIcon} source={icons.fire} />
+                    
                         </View>
                     </ImageBackground>
                 </TouchableOpacity>
@@ -25,18 +26,10 @@ const FavoriteCard = (props) => {
                 <Text style={styles.foodName}>Bureger</Text>
                 <Text style={styles.priceText}>Price:10$</Text>
             </View>
-
-         
-
-            
-           
-
         </View> 
     </View>
     )
-
 };
-
 const styles = StyleSheet.create({
     foodCard: {
         flexDirection: 'row',
@@ -57,7 +50,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 10,
         marginBottom: 10,
-
     },
     favoraitIcon: {
         width: 25,
@@ -104,7 +96,6 @@ const styles = StyleSheet.create({
         // marginTop: -30,
         // position: 'absolute',
     },
-
 });
 
 
