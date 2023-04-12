@@ -18,6 +18,9 @@ import FoodDelivryProvider from "./store/FoodDelivryProvider";
 import StoreScreen from "./Screens/store/SroreScreen";
 import Favorait from "./src/component/Favorait";
 import { Provider } from "react-redux";
+import GoogleMap from "./Screens/googleMap/GoogleMap";
+
+
 
 
 
@@ -54,7 +57,10 @@ const App = () => {
           <Stack.Screen name="VerificationCode" component={VerificationCode} options={{ headerShown: false }} />
           <Stack.Screen name="StoreScreen" component={StoreScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Favorait" component={Favorait} options={{ headerShown: false }} />
+          <Stack.Screen name="GoogleMap" component={GoogleMap} options={{ headerShown: false }} />
 
+
+        
 
         </Stack.Navigator>
       </NavigationContainer>

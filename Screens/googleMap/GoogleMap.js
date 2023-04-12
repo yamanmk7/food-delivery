@@ -5,7 +5,7 @@ const GoogleMap = (props) => {
 
     return (
         <View style={styles.container}>
-            <MapView/>
+            <Text>GoogleMap</Text>
         </View>
     );
 };
