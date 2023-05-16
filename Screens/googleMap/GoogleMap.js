@@ -13,7 +13,7 @@ const GoogleMap = ({route, navigation}) => {
 
     // React.useEffect(() => {
     //      let {restaurant, currentLocation} = route.params ||{};
-    //     let fromLoc = currentLocation.gps  ;
+    //     let fromLoc = currentLocation.gps ;
     //     let toLoc = restaurant.location;
     //     let street = currentLocation.streetName;
 

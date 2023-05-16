@@ -39,8 +39,6 @@ export default function MainCategories() {
         {id:'4', value:'Pizza'},
         {id:'5', value:'Snacks'},
         {id:'6', value:'Diary Drinks'},
-        
-
     ]
    
 
@@ -54,7 +52,6 @@ export default function MainCategories() {
         )
     }
 
-    /////////////////////////////
 
     const params = {
         list: {
